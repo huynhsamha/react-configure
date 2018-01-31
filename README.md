@@ -1,6 +1,8 @@
 # create-react-app-config
 create-react-app with redux, sass, code spliting, router, ...
 
+# step to step to create project
+
 ## create-react-app
 Create react app from create-react-app:
 
@@ -48,3 +50,39 @@ file .gitignore:
 # auto generated files (sass, less, ...)
 src/**/*.css
 ```
+
+## create server node
+
+### express to init node
+
+```bash
+mkdir server
+cd server
+express
+```
+
+1. rename app.js to server.js
+2. join server.js and ./bin/www
+3. correct file server.js
+4. move server.js to root
+5. insert dependencies in package.json to package.json in root
+6. remove dependencies not use (serve-favicon, jade)
+7. remove all file in server, execpt routes/index.js
+
+### install package
+
+`yarn` or `npm install`
+
+### add package cors
+
+use package cors to cross localhost:3000 (client-side, is react) to localhost:4200 (server-side, is node express)
+
+`yarn add cors` or `npm install --save cors`
+
+### run to test
+
+client side (react): localhost:3000
+`yarn start` or `npm start`
+
+server-side (node express): localhost:4200
+`node server`
