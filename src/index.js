@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 // Libs
 import './lib/jquery';
+import './lib/bootstrap';
 
 // Styles
 import './index.css';

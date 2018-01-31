@@ -1,9 +1,8 @@
 # create-react-app-config
-create-react-app with redux, sass, code spliting, router, ...
+create-react-app with redux, sass, code spliting, router, jQuery, ...
 
 
-
-
+Table of Contents:
 - [create-react-app-config](#create-react-app-config)
 - [Start with create-react-app](#start-with-create-react-app)
 - [Config environment variables](#config-environment-variables)
@@ -17,12 +16,19 @@ create-react-app with redux, sass, code spliting, router, ...
     - [start server-client](#start-server-client)
 - [Environment for react app](#environment-for-react-app)
 - [Remove default component App](#remove-default-component-app)
-- [jQuery - How to use?](#jquery---how-to-use)
+- [jQuery](#jquery)
     - [Installation](#installation)
     - [How to use?](#how-to-use)
     - [Recommend](#recommend)
+- [Bootstrap 4](#bootstrap-4)
+    - [Use along with jQuery](#use-along-with-jquery)
+        - [Installation](#installation)
+        - [How to use?](#how-to-use)
 - [VS Code Extensions](#vs-code-extensions)
 - [VS Code User Settings](#vs-code-user-settings)
+
+
+
 
 
 
@@ -42,6 +48,8 @@ Create react app from create-react-app:
 
 
 
+
+
 # Config environment variables
 Create files env, `create-react-app` will use them.
 
@@ -57,8 +65,15 @@ Only var with prefix `REACT_APP_` can use in `create-react-app`
 
 
 
+
+
+
+
 # Post-Processing CSS:
 This project setup minifies your CSS and adds vendor prefixes to it automatically through Autoprefixer so you don’t need to worry about it.
+
+
+
 
 
 
@@ -94,6 +109,10 @@ file `.gitignore`:
 # auto generated files (sass, less, ...)
 src/**/*.css
 ```
+
+
+
+
 
 
 
@@ -141,6 +160,12 @@ server-side (node express): localhost:4200
 
 
 
+
+
+
+
+
+
 # Environment for react app
 
 ```bash
@@ -158,6 +183,9 @@ Only var with prefix `REACT_APP_` can use in `create-react-app`
 
 
 
+
+
+
 # Remove default component App
 1. change extension to .jsx
 2. remove `logo.svg`
@@ -167,7 +195,12 @@ Only var with prefix `REACT_APP_` can use in `create-react-app`
 
 
 
-# jQuery - How to use?
+
+
+
+
+
+# jQuery
 
 ## Installation
 1. `yarn add jquery` or `npm install --save jquery`
@@ -200,6 +233,36 @@ window.jQuery = $;
 ## Recommend
 Not use jQuery if it's not needed
 
+
+
+
+
+
+# Bootstrap 4
+## Use along with jQuery
+### Installation
+1. `yarn add bootstrap` or `npm install --save bootstrap`
+2. `mkdir src/lib` (if you have `lib`, skip this step)
+3. `touch src/lib/bootstrap.js`
+4. edit created file as lines:
+
+```javascript
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+```
+
+### How to use?
+1. In `index.js`, import by: `import './lib/bootstrap';`
+2. In the component, you can use bootstrap 4 as document available
+
+
+
+
+
+
+
+
+
 # VS Code Extensions
 should install the below extensions I think helpful:
 
@@ -230,6 +293,15 @@ should install the below extensions I think helpful:
 25. Beautify css/sass/scss/less
 
 
+
+
+
+
+
+
+
+
+
 # VS Code User Settings
 you also setting by:
 
@@ -252,9 +324,9 @@ you also setting by:
         "comments": true,
         "strings": true
     },
-    "terminal.integrated.cursorStyle": "line", // set cursor style on terminal
-    "terminal.integrated.fontSize": 13, // set font size on terminal
-    "terminal.integrated.fontFamily": "", // font family ono terminal
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.fontSize": 13,
+    "terminal.integrated.fontFamily": "",
     "vsicons.projectDetection.autoReload": true,
 }
 ```
