@@ -2,8 +2,26 @@ import React, { Component } from 'react';
 import './App.css';
 
 import $ from 'jquery';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      modal: false
+    }
+  }
+
+  toggle = () => {
+    this.setState({modal: !this.state.modal});
+  }
+
+  onClickReceiveAlert = () => {
+    this.toggle();
+    alert('You are received one alert!');
+  }
 
   render() {
     return (
@@ -20,8 +38,18 @@ class App extends Component {
                 data-toggle="tooltip" data-placement="right" title="Tooltip on here">Tooltip</button>
             </div>
 
-            <div className="col-4">
-            
+            <div className="col-4 text-center">
+              <Button color="danger" onClick={this.toggle}>Toggle Modal</Button>
+              <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+                <ModalHeader toggle={this.toggle}>Notification</ModalHeader>
+                <ModalBody>
+                  Do you want receive one alert?
+                </ModalBody>
+                <ModalFooter>
+                  <Button color="primary" onClick={this.onClickReceiveAlert}>OK</Button>{' '}
+                  <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+                </ModalFooter>
+              </Modal>
             </div>
           </div>
         </div>

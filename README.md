@@ -24,6 +24,9 @@ Table of Contents:
     - [Use along with jQuery](#use-along-with-jquery)
         - [Installation](#installation)
         - [How to use?](#how-to-use)
+    - [Use via React Component - reactstrap](#use-via-react-component---reactstrap)
+        - [Installation and Usage](#installation-and-usage)
+    - [Recommend](#recommend)
 - [VS Code Extensions](#vs-code-extensions)
 - [VS Code User Settings](#vs-code-user-settings)
 
@@ -256,9 +259,15 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 2. In the component, you can use bootstrap 4 as document available
 
 
+## Use via React Component - reactstrap
+### Installation and Usage
+1. `yarn add reactstrap@next` or `npm install --save reactstrap@next`
+2. Only import Component to use as reactstrap document
 
 
-
+## Recommend
+1. I think you should use `reactstrap` if you want use some component in react, with event handle.
+2. If you need some style in bootstrap, you can use directly, and don't need use `jQuery`
 
 
 
