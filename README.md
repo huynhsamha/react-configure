@@ -17,6 +17,8 @@ create-react-app with redux, sass, code spliting, router, ...
     - [start server-client](#start-server-client)
 - [Environment for react app](#environment-for-react-app)
 - [Remove default component App](#remove-default-component-app)
+- [VS Code Extensions](#vs-code-extensions)
+- [VS Code User Settings](#vs-code-user-settings)
 
 
 
@@ -65,15 +67,21 @@ This project setup minifies your CSS and adds vendor prefixes to it automaticall
 
 should use: `yarn add node-sass-chokidar npm-run-all`
 
-file `package.json`:
+file `json`:
 
 ```
--    "start": "react-scripts start",
--    "build": "react-scripts build",
-+    "start-js": "react-scripts start",
-+    "start": "npm-run-all -p watch-css start-js",
-+    "build-js": "react-scripts build",
-+    "build": "npm-run-all build-css build-js",
+{
+    "scripts": {
+    -   "start": "react-scripts start",
+    -   "build": "react-scripts build",
+    +   "start": "npm-run-all -p watch-css start-js",
+    +   "build": "npm-run-all build-css build-js",
+    +   "start-js": "react-scripts start",
+    +   "build-js": "react-scripts build",
+    +   "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    +   "build-css": "node-sass-chokidar src/ -o src/",
+  }
+}
 ```
 
 file `.gitignore`:
@@ -151,3 +159,63 @@ Only var with prefix `REACT_APP_` can use in `create-react-app`
 2. remove `logo.svg`
 3. change `.css` to `.scss` (auto generated)
 4. remove all style
+
+
+
+# VS Code Extensions
+should install the below extensions I think helpful:
+
+1. Auto Close Tag
+2. Auto Rename Tag
+3. Bootstrap 3 Snippets
+4. Bootstrap 4 & Font awesome snippets
+5. Bracket Pair Colorizer
+6. EditorConfig for VS Code
+7. ESLint
+8. Font-awesome codes for css
+9. Font-awesome codes for html
+10. HTML CSS suppport
+11. HTML Snippets
+12. IntelliSense for CSS class names
+13. JavaScript (ES6) code snippets
+14. Markdown All in One
+15. Markdown PDF
+16. npm
+17. npm INtellisence
+18. Path Intellisense
+19. Prettier - Code formatter
+20. Sass
+21. Sass Formatter
+22. SCSS IntelliSence
+23. TSLint
+24. vscode-icons
+
+
+# VS Code User Settings
+you also setting by:
+
+1. `Ctrl + Shift P`
+2. Search `user settings` and `enter`
+3. And below settings I think helpful
+
+```json
+{
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.startupEditor": "newUntitledFile",
+    "window.zoomLevel": 0,
+    "editor.fontSize": 13,
+    "eslint.autoFixOnSave": true,
+    "tslint.autoFixOnSave": true,
+    "editor.formatOnSave": false,
+    "editor.renderWhitespace": "boundary",
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": true,
+        "strings": true
+    },
+    "terminal.integrated.cursorStyle": "line", // set cursor style on terminal
+    "terminal.integrated.fontSize": 13, // set font size on terminal
+    "terminal.integrated.fontFamily": "", // font family ono terminal
+    "vsicons.projectDetection.autoReload": true,
+}
+```
