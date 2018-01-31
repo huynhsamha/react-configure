@@ -86,3 +86,21 @@ client side (react): localhost:3000
 
 server-side (node express): localhost:4200
 `node server`
+
+
+## Environment for react app
+
+```bash
+mkdir src/environments
+cd src/environments
+touch env.development.js env.production.js index.js
+```
+
+1. create file as source code
+2. in development, use `localhost:4200` as server, so you can detect env to use `baseUrl API`, in production, `baseUrl` then is only `/`
+
+## Remove default component App
+1. change extension to .jsx
+2. remove `logo.svg`
+3. change `.css` to `.scss` (auto generated)
+4. remove all style
