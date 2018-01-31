@@ -189,6 +189,7 @@ should install the below extensions I think helpful:
 22. SCSS IntelliSence
 23. TSLint
 24. vscode-icons
+25. Beautify css/sass/scss/less
 
 
 # VS Code User Settings
