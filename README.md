@@ -17,6 +17,10 @@ create-react-app with redux, sass, code spliting, router, ...
     - [start server-client](#start-server-client)
 - [Environment for react app](#environment-for-react-app)
 - [Remove default component App](#remove-default-component-app)
+- [jQuery - How to use?](#jquery---how-to-use)
+    - [Installation](#installation)
+    - [How to use?](#how-to-use)
+    - [Recommend](#recommend)
 - [VS Code Extensions](#vs-code-extensions)
 - [VS Code User Settings](#vs-code-user-settings)
 
@@ -161,6 +165,40 @@ Only var with prefix `REACT_APP_` can use in `create-react-app`
 4. remove all style
 
 
+
+
+# jQuery - How to use?
+
+## Installation
+1. `yarn add jquery` or `npm install --save jquery`
+2. `mkdir src/lib`
+3. `touch src/lib/jquery.js`
+4. edit created file by following lines:
+
+```javascript
+import $ from 'jquery';
+
+// config jquery variables for other lib use jQuery (such as bootstrap)
+window.$ = $;
+window.jQuery = $;
+```
+
+## How to use?
+1. In `index.js`, import config as: `import './lib/jquery';`
+2. In the component, to use jQuery, you should import: `import $ from 'jquery';`
+3. To declare jquery function, only use in `componentDidMount()`, such as:
+
+```javascript
+  componentDidMount() {
+    // jQuery should declare at here
+    $(document).ready(() => {
+      $('#alert').click(() => alert('This is alert be jQuery'));
+    });
+  }
+```
+
+## Recommend
+Not use jQuery if it's not needed
 
 # VS Code Extensions
 should install the below extensions I think helpful:

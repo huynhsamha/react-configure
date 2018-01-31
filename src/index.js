@@ -1,6 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+// Libs
+import './lib/jquery';
+
+// Styles
 import './index.css';
+
+// Components
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 

@@ -8,6 +8,7 @@
     "cors": "^2.8.4",
     "debug": "~2.6.9",
     "express": "~4.15.5",
+    "jquery": "^3.3.1",
     "morgan": "~1.9.0",
     "node-sass-chokidar": "0.0.3",
     "npm-run-all": "^4.1.2",
