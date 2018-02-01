@@ -18,7 +18,7 @@ class App extends Component {
         {/* <DemoJqueryBootstrap/> */}
         {/* <LoadableDemoComponent /> */}
         {/* <DemoRouter /> */}
-        <DemoReactReveal/>
+        {/* <DemoReactReveal/> */}
       </div>
     );
   }

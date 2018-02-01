@@ -41,6 +41,8 @@ Table of Contents:
             - [Reveal with React](#reveal-with-react)
             - [Animated.css with React](#animatedcss-with-react)
         - [How to use?](#how-to-use)
+- [Fetch Data API to server node](#fetch-data-api-to-server-node)
+    - [Create `services` to get API](#create-services-to-get-api)
 - [VS Code Extensions](#vs-code-extensions)
 - [VS Code User Settings](#vs-code-user-settings)
 
@@ -439,6 +441,54 @@ Tada
 ### How to use?
 1. Use http://www.react-reveal.com/examples/.
 2. View demo: `demo-react-reveal.jsx`
+
+
+
+
+
+
+
+
+# Fetch Data API to server node
+## Create `services` to get API
+1. `mkdir src/services` (if you have not)
+2. `touch db-service.js auth-service.js` (db- to get database, auth- to authentication user)
+3. Example with `db-service.js`:
+    + `import Env from './../environments';`: to get `baseUrl` with environments
+    + `export class DbService` as static class
+    + set baseUrl to get API:
+```js
+static baseUrl = Env.baseUrl;
+static parseUrl = (url) => DbService.baseUrl + url; 
+```
+
+Example `get` API:
+```js
+static getItems = () => {
+    let url = DbService.parseUrl('/api/items');
+    console.log(url);
+    return fetch(url).then(res => res.json());
+}
+```
+
+Example `Post` API:
+```js
+ static addItem = (item) => {
+    let url = DbService.parseUrl('/api/items');
+    return fetch(url, {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(item)
+    }).then(res => res.json());
+}
+```
+
+
+
+
 
 
 
