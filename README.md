@@ -37,6 +37,9 @@ Table of Contents:
 - [UI Awesome with React Component](#ui-awesome-with-react-component)
     - [Reveal Component on scroll: use react-reveal](#reveal-component-on-scroll-use-react-reveal)
         - [Installation](#installation)
+        - [Support](#support)
+            - [Reveal with React](#reveal-with-react)
+            - [Animated.css with React](#animatedcss-with-react)
         - [How to use?](#how-to-use)
 - [VS Code Extensions](#vs-code-extensions)
 - [VS Code User Settings](#vs-code-user-settings)
@@ -404,7 +407,39 @@ render() {
 or 
 
 `npm install --save react-reveal`
+
+### Support
+#### Reveal with React
+```
+Fade
+Flip
+Rotate
+Zoom
+Bounce
+Slide
+Roll
+
+left/right/top/bottom
+fadeOut
+```
+#### Animated.css with React
+```
+Jump
+Flash
+HeadShake
+Jello
+Pulse
+RubberBand
+Shake
+Spin
+Swing
+Tada
+```
+
 ### How to use?
+1. Use http://www.react-reveal.com/examples/.
+2. View demo: `demo-react-reveal.jsx`
+
 
 
 
