@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 import { LoadableLink1 } from './link-1/loadable-link-1';
 import { LoadableLink2 } from './link-2/loadable-link-2';
 import { LoadableLink3 } from './link-3/loadable-link-3';

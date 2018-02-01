@@ -31,6 +31,7 @@ Table of Contents:
     - [Install `react-loadable, react-router-dom`](#install-react-loadable-react-router-dom)
     - [Create a Loading Component](#create-a-loading-component)
     - [Use `react-loadable` to create new component](#use-react-loadable-to-create-new-component)
+    - [Create Demo Router](#create-demo-router)
 - [VS Code Extensions](#vs-code-extensions)
 - [VS Code User Settings](#vs-code-user-settings)
 
@@ -297,6 +298,43 @@ or
 
 ## Use `react-loadable` to create new component
 View component `HomePage` (not loadable) and `LoadableHomePage` (loadable)
+
+
+## Create Demo Router
+
+1. `mkdir src/demo-router`
+2. `touch src/demo-router/demo-router.jsx`
+3. `mkdir src/demo-router/link-1`
+4. craete simple component with `demo-router` and `link-1`
+5. copy `link-1` and paste to `link-2` and `link-3`
+6. try import `loadable` with `demo-router` with `link-1, link-2, link-3`
+
+Demo for above steps:
+```javascript
+// demo-router.jsx
+
+// declare style
+const DemoRouterStyle = {
+    width: '80%',
+    margin: '20px auto',
+    minHeight: '100px',
+    backgroundColor: '#cacaca',
+    padding: '25px'
+}
+
+render() {
+    return (
+        <div style={DemoRouterStyle}>
+            <LoadableLink1 />
+            <LoadableLink2 />
+            <LoadableLink3 />
+        </div>
+    )
+}
+```
+
+
+
 
 
 
