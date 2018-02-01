@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
-
-import $ from 'jquery';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import Loading from './components/loading/loading';
+
+import './App.css';
+import $ from 'jquery';
 
 class App extends Component {
 
@@ -26,7 +27,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
+        <Loading/>
         <div className="container">
           <div className="row">
             <div className="col-4 text-center">
