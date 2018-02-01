@@ -34,6 +34,10 @@ Table of Contents:
     - [Create Demo Router](#create-demo-router)
     - [Use `react-router-dom` with loadable components](#use-react-router-dom-with-loadable-components)
     - [Test loadable components:](#test-loadable-components)
+- [UI Awesome with React Component](#ui-awesome-with-react-component)
+    - [Reveal Component on scroll: use react-reveal](#reveal-component-on-scroll-use-react-reveal)
+        - [Installation](#installation)
+        - [How to use?](#how-to-use)
 - [VS Code Extensions](#vs-code-extensions)
 - [VS Code User Settings](#vs-code-user-settings)
 
@@ -390,6 +394,15 @@ render() {
 
 
 
+# UI Awesome with React Component
+## Reveal Component on scroll: use react-reveal
+### Installation
+`yarn add react-reveal` 
+
+or 
+
+`npm install --save react-reveal`
+### How to use?
 
 
 
