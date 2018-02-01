@@ -32,6 +32,8 @@ Table of Contents:
     - [Create a Loading Component](#create-a-loading-component)
     - [Use `react-loadable` to create new component](#use-react-loadable-to-create-new-component)
     - [Create Demo Router](#create-demo-router)
+    - [Use `react-router-dom` with loadable components](#use-react-router-dom-with-loadable-components)
+    - [Test loadable components:](#test-loadable-components)
 - [VS Code Extensions](#vs-code-extensions)
 - [VS Code User Settings](#vs-code-user-settings)
 
@@ -276,6 +278,18 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 # `react-router-dom` (router) and `react-loadable` (code-splitting)
 
 ## Install `react-loadable, react-router-dom`
@@ -310,7 +324,7 @@ View component `HomePage` (not loadable) and `LoadableHomePage` (loadable)
 6. try import `loadable` with `demo-router` with `link-1, link-2, link-3`
 
 Demo for above steps:
-```javascript
+```jsx
 // demo-router.jsx
 
 // declare style
@@ -332,6 +346,47 @@ render() {
     )
 }
 ```
+
+
+## Use `react-router-dom` with loadable components
+1. In `demo-router.jsx`: 
+2. `import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';`
+3. `<Router>` only one child
+4. Route with components:
+
+```jsx
+<Switch>
+    <Route exact path="/link-1" component={LoadableLink1} />
+    <Route exact path="/link-2" component={LoadableLink2} />
+    <Route exact path="/link-3" component={LoadableLink3} />
+    <Route render={(props) => <div>Page Not Found</div>}/>
+</Switch>
+```
+
+5. Link to route
+
+```jsx
+<Link to="/link-1">Link to 1</Link>
+<Link to="/link-2">Link to 2</Link>
+<Link to="/link-3">Link to 3</Link>
+<Link to="/link-page-not-found">Link to Page Not Found</Link>
+```
+
+## Test loadable components:
+1. Inspect element in browser
+2. Choose tab network
+3. Click filter JS
+4. Refresh page
+5. first only `bundle.js` and some js file
+6. click link-1, you see `*.chunk.js` is loaded
+7. continue with link-2, link-3, you also see new `chunk file` is loaded by browser
+8. That is lazy load.
+
+
+
+
+
+
 
 
 
