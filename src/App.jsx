@@ -3,6 +3,7 @@ import { LoadableHomePage } from './components/home-page/loadable-home-page';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import './App.css';
 import $ from 'jquery';
+import { DemoRouter } from './components/demo-router/demo-router';
 
 class App extends Component {
 
@@ -27,6 +28,7 @@ class App extends Component {
     return (
       <div className="App">
         <LoadableHomePage />
+        <DemoRouter />
         <div className="container">
           <div className="row">
             <div className="col-4 text-center">
