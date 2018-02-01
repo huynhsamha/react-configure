@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
+import { LoadableHomePage } from './components/home-page/loadable-home-page';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import Loading from './components/loading/loading';
-
 import './App.css';
 import $ from 'jquery';
 
@@ -16,7 +15,7 @@ class App extends Component {
   }
 
   toggle = () => {
-    this.setState({modal: !this.state.modal});
+    this.setState({ modal: !this.state.modal });
   }
 
   onClickReceiveAlert = () => {
@@ -27,7 +26,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Loading/>
+        <LoadableHomePage />
         <div className="container">
           <div className="row">
             <div className="col-4 text-center">

@@ -27,6 +27,10 @@ Table of Contents:
     - [Use via React Component - reactstrap](#use-via-react-component---reactstrap)
         - [Installation and Usage](#installation-and-usage)
     - [Recommend](#recommend)
+- [`react-router-dom` (router) and `react-loadable` (code-splitting)](#react-router-dom-router-and-react-loadable-code-splitting)
+    - [Install `react-loadable, react-router-dom`](#install-react-loadable-react-router-dom)
+    - [Create a Loading Component](#create-a-loading-component)
+    - [Use `react-loadable` to create new component](#use-react-loadable-to-create-new-component)
 - [VS Code Extensions](#vs-code-extensions)
 - [VS Code User Settings](#vs-code-user-settings)
 
@@ -268,6 +272,31 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 ## Recommend
 1. I think you should use `reactstrap` if you want use some component in react, with event handle.
 2. If you need some style in bootstrap, you can use directly, and don't need use `jQuery`
+
+
+
+# `react-router-dom` (router) and `react-loadable` (code-splitting)
+
+## Install `react-loadable, react-router-dom`
+
+`yarn add react-loadable react-router-dom`
+or
+`npm install --save react-loadable react-router-dom`
+
+1. `react-loadable`: to code-splitting
+    + that means lazy load components until it's called by user, it speed up your Single Page App (SPA).
+    + `create-react-app` will bundle new script file, when it's called, it will import this file to app.
+2. `react-router-dom`: to router for SPA, not loading again all page.
+
+
+## Create a Loading Component
+1. Create Loading component
+2. When use Loadable with loading component, it will add props to this component, such as:
+    `{ isLoading: true, pastDelay: false, timedOut: false, error: null }`
+
+
+## Use `react-loadable` to create new component
+View component `HomePage` (not loadable) and `LoadableHomePage` (loadable)
 
 
 
