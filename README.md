@@ -243,6 +243,7 @@ window.jQuery = $;
     });
   }
 ```
+4. Can view `demo-jquery-bootstrap`
 
 ## Recommend
 Not use jQuery if it's not needed
@@ -268,13 +269,13 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 ### How to use?
 1. In `index.js`, import by: `import './lib/bootstrap';`
 2. In the component, you can use bootstrap 4 as document available
-
+3. Can view `demo-jquery-bootstrap`
 
 ## Use via React Component - reactstrap
 ### Installation and Usage
 1. `yarn add reactstrap@next` or `npm install --save reactstrap@next`
 2. Only import Component to use as reactstrap document
-
+3. Can view `demo-jquery-bootstrap`
 
 ## Recommend
 1. I think you should use `reactstrap` if you want use some component in react, with event handle.
@@ -315,7 +316,8 @@ or
 
 
 ## Use `react-loadable` to create new component
-View component `HomePage` (not loadable) and `LoadableHomePage` (loadable)
+1. View `demo-loadable-component` to sample implement.
+2. View component `demo-loadable-component.jsx` (not loadable) and `loadable-demo-component.jsx` (loadable)
 
 
 ## Create Demo Router
@@ -384,7 +386,7 @@ render() {
 5. first only `bundle.js` and some js file
 6. click link-1, you see `*.chunk.js` is loaded
 7. continue with link-2, link-3, you also see new `chunk file` is loaded by browser
-8. That is lazy load.
+8. That is lazy loading component
 
 
 
