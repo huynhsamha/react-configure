@@ -8,6 +8,7 @@
     "cookie-parser": "~1.4.3",
     "cors": "^2.8.4",
     "debug": "~2.6.9",
+    "eslint": "^4.16.0",
     "express": "~4.15.5",
     "jquery": "^3.3.1",
     "morgan": "~1.9.0",
@@ -16,10 +17,13 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-loadable": "^5.3.1",
+    "react-redux": "^5.0.6",
     "react-reveal": "^1.0.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.0",
-    "reactstrap": "^5.0.0-beta"
+    "reactstrap": "^5.0.0-beta",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
   },
   "scripts": {
     "start": "npm-run-all -p watch-css start-js",

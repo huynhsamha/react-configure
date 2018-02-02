@@ -34,6 +34,12 @@ Table of Contents:
     - [Create Demo Router](#create-demo-router)
     - [Use `react-router-dom` with loadable components](#use-react-router-dom-with-loadable-components)
     - [Test loadable components:](#test-loadable-components)
+- [Redux: `redux, react-redux, redux-thunk`](#redux-redux-react-redux-redux-thunk)
+    - [Installation](#installation)
+    - [Configure](#configure)
+        - [Constants, Actions, Reducers](#constants-actions-reducers)
+- [Fetch Data API to server node](#fetch-data-api-to-server-node)
+    - [Create `services` to get API](#create-services-to-get-api)
 - [UI Awesome with React Component](#ui-awesome-with-react-component)
     - [Reveal Component on scroll: use react-reveal](#reveal-component-on-scroll-use-react-reveal)
         - [Installation](#installation)
@@ -41,8 +47,6 @@ Table of Contents:
             - [Reveal with React](#reveal-with-react)
             - [Animated.css with React](#animatedcss-with-react)
         - [How to use?](#how-to-use)
-- [Fetch Data API to server node](#fetch-data-api-to-server-node)
-    - [Create `services` to get API](#create-services-to-get-api)
 - [VS Code Extensions](#vs-code-extensions)
 - [VS Code User Settings](#vs-code-user-settings)
 
@@ -401,6 +405,72 @@ render() {
 
 
 
+
+# Redux: `redux, react-redux, redux-thunk`
+## Installation
+`yarn add redux react-redux redux-thunk`
+or
+`npm install --save redux react-redux redux-thunk`
+
+
+## Configure
+### Constants, Actions, Reducers
+
+
+
+
+
+
+# Fetch Data API to server node
+## Create `services` to get API
+1. `mkdir src/services` (if you have not)
+2. `touch db-service.js auth-service.js` (db- to get database, auth- to authentication user)
+3. Example with `db-service.js`:
+    + `import Env from './../environments';`: to get `baseUrl` with environments
+    + `export class DbService` as static class
+    + set baseUrl to get API:
+```js
+static baseUrl = Env.baseUrl;
+static parseUrl = (url) => DbService.baseUrl + url; 
+```
+
+Example `get` API:
+```js
+static getItems = () => {
+    let url = DbService.parseUrl('/api/items');
+    console.log(url);
+    return fetch(url).then(res => res.json());
+}
+```
+
+Example `Post` API:
+```js
+ static addItem = (item) => {
+    let url = DbService.parseUrl('/api/items');
+    return fetch(url, {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(item)
+    }).then(res => res.json());
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # UI Awesome with React Component
 ## Reveal Component on scroll: use react-reveal
 ### Installation
@@ -449,42 +519,6 @@ Tada
 
 
 
-# Fetch Data API to server node
-## Create `services` to get API
-1. `mkdir src/services` (if you have not)
-2. `touch db-service.js auth-service.js` (db- to get database, auth- to authentication user)
-3. Example with `db-service.js`:
-    + `import Env from './../environments';`: to get `baseUrl` with environments
-    + `export class DbService` as static class
-    + set baseUrl to get API:
-```js
-static baseUrl = Env.baseUrl;
-static parseUrl = (url) => DbService.baseUrl + url; 
-```
-
-Example `get` API:
-```js
-static getItems = () => {
-    let url = DbService.parseUrl('/api/items');
-    console.log(url);
-    return fetch(url).then(res => res.json());
-}
-```
-
-Example `Post` API:
-```js
- static addItem = (item) => {
-    let url = DbService.parseUrl('/api/items');
-    return fetch(url, {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(item)
-    }).then(res => res.json());
-}
-```
 
 
 
