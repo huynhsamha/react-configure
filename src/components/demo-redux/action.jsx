@@ -7,7 +7,7 @@ import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap
 class ActionRedux extends Component {
     constructor(props) {
         super(props);
-        
+
         this.item = {
             name: null, leave: null, price: null
         }
@@ -23,21 +23,21 @@ class ActionRedux extends Component {
                         <Label for="name" sm={2}>Name</Label>
                         <Col sm={10}>
                             <Input type="email" name="name" id="name" placeholder="Item name"
-                                onChange={(e) => {this.item.name = e.target.value}}/>
+                                onChange={(e) => { this.item.name = e.target.value }} />
                         </Col>
                     </FormGroup>
                     <FormGroup row>
                         <Label for="leave" sm={2}>Leave</Label>
                         <Col sm={10}>
                             <Input type="number" name="leave" id="leave" placeholder="Leave"
-                                onChange={(e) => {this.item.leave = e.target.value}}/>
+                                onChange={(e) => { this.item.leave = e.target.value }} />
                         </Col>
                     </FormGroup>
                     <FormGroup row>
                         <Label for="price" sm={2}>Price</Label>
                         <Col sm={10}>
                             <Input type="number" name="price" id="price" placeholder="Price"
-                                onChange={(e) => {this.item.price = e.target.value}}/>
+                                onChange={(e) => { this.item.price = e.target.value }} />
                         </Col>
                     </FormGroup>
                     <FormGroup check row>
@@ -60,7 +60,7 @@ class ActionRedux extends Component {
     onClickAddItem = () => {
         // console.log('start add item');
         // create new item, not pass one object is this.item (as redux)
-        let newItem = {...this.item};
+        let newItem = { ...this.item };
         // console.log(newItem);
         this.props.addItem(newItem)
     }
