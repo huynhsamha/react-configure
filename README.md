@@ -27,6 +27,9 @@ Table of Contents:
     - [Use via React Component - reactstrap](#use-via-react-component---reactstrap)
         - [Installation and Usage](#installation-and-usage)
     - [Recommend](#recommend)
+- [Font Awesome](#font-awesome)
+    - [Add via `index.html`](#add-via-indexhtml)
+    - [Add via npm package](#add-via-npm-package)
 - [`react-router-dom` (router) and `react-loadable` (code-splitting)](#react-router-dom-router-and-react-loadable-code-splitting)
     - [Install `react-loadable, react-router-dom`](#install-react-loadable-react-router-dom)
     - [Create a Loading Component](#create-a-loading-component)
@@ -296,9 +299,15 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 
 
+# Font Awesome
+## Add via `index.html`
 
+You can include via file `index.html` in folder `public`
 
+## Add via npm package
 
+1. `yarn add font-awesome` or `npm install --save font-awesome`
+2. In file `index.js`, import it: `import 'font-awesome/css/font-awesome.min.css';`
 
 
 
@@ -406,6 +415,14 @@ render() {
 
 
 
+
+
+
+
+
+
+
+
 # Redux: `redux, react-redux, redux-thunk`
 ## Installation
 `yarn add redux react-redux redux-thunk`
@@ -415,6 +432,51 @@ or
 
 ## Configure
 ### Constants, Actions, Reducers
+
+1. In `src`, create dir and files: 
+    + `constants/action-types.js`: declare action name as const
+    + `actions/index.js`: declare actions for redux
+    + `reducers/`: declare reducers
+    + `reducers/[demo-name].js`: declare action for a specific object.
+    + `reducers/index.js`: to combine reducer with redux, after that is to createStore.
+
+2. In `index.js`: 
+    + `import { Provider } from 'react-redux';`: use Provider to store redux
+    + `import { createStore, applyMiddleware } from 'redux';`: use createStore and middleware `thunk` with createStore
+    + `import thunk from 'redux-thunk';`: middleware for createStore, support async function
+    + `import reducer from './reducers';`: reducers after combined
+    + `const store = createStore(reducer, applyMiddleware(thunk));`: createStore with combined reducer, and apply middleware thunk
+
+3. In `reducers/index.js`: combine reducers
+```js
+import { combineReducers } from 'redux';
+
+import Demo1 from './action-demo-1';
+import Demo2 from './action-demo-2';
+
+const reducers = combineReducers({
+    Demo1,
+    Demo2
+});
+
+export default reducers;
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

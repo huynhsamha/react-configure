@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
+import { Table } from 'reactstrap';
+import * as Actions from './../../actions/index.js';
 
-
-export class Child extends Component {
+class Child extends Component {
     constructor(props) {
         super(props);
 
@@ -12,18 +13,63 @@ export class Child extends Component {
     render() {
         return (
             <div>
-                {this.props.hideImage ? 'true' : 'false'}
-                <img src="http://www.movingimage.us/images/homepage/features/jhe_jim_kermit.jpg" alt=""
-                    />
+                <img
+                    src="https://cdn.vox-cdn.com/thumbor/H0kmTTJP9KkYSbmFSxqzoU1xFTs=/0x0:3994x2663/1200x800/filters:focal(1837x1338:2475x1976)/cdn.vox-cdn.com/uploads/chorus_image/image/57285951/usa_today_9802867.0.jpg"
+                    alt="basketball" width="500"
+                    style={{ display: !this.props.hideImage ? 'initial' : 'none' }} />
+
+
+                <Table striped bordered hover size="sm">
+                    <thead>
+                        <tr>
+                            <th className="text-center" width="10%">#</th>
+                            <th className="text-center" width="10%">ID</th>
+                            <th className="text-center" width="30%">Name</th>
+                            <th className="text-center" width="10%">Leave</th>
+                            <th className="text-center" width="30%">Price</th>
+                            <th className="text-center" width="10%">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.props.items.map((o, i) =>
+                            <tr key={o.id}>
+                                <th className="text-center" scope="row">{i}</th>
+                                <th className="text-center">{o.id}</th>
+                                <td>{o.name}</td>
+                                <td className="text-right">{o.leave}</td>
+                                <td className="text-right">{o.price}</td>
+                                <td className="text-center">
+                                    <i className="fa fa-trash-o" 
+                                        onClick={() => this.onClickRemoveItem(o.id)}></i>
+                                </td>
+                            </tr>
+                        )}
+                    </tbody>
+                </Table>
             </div>
         )
     }
-}
 
-const mapStateToProps = (state) => {
-    return {
-        hideImage: state.Demo1,
+    onClickRemoveItem = (id) => {
+        console.log('click remove', id);
+        this.props.removeItem(id);
     }
 }
 
-export default connect(mapStateToProps)(Child);
+const mapStateToProps = state => {
+    return {
+        hideImage: state.Demo1,
+        items: state.Demo2
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        removeItem: (id) => {
+            console.log('dispatch demo 2');
+            dispatch(Actions.removeDemo2(id));
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Child);

@@ -2,20 +2,23 @@ import { ActionTypes } from './../constants/action-types';
 
 const initialState = [];
 
-for (let i = 0; i < 15; i++) initialState.push({
-    id: i, name: `Item ${i}`, left: i * 20, price: i * 85000
+let currentID = 10;
+for (let i = 0; i < currentID; i++) initialState.push({
+    id: i, name: `Item ${i}`, leave: i * 20, price: i * 85000
 });
 
 const reducer = (state = initialState, action) => {
+    // console.log('reducer demo2');
     switch (action.type) {
         case ActionTypes.ADD_DEMO_2:
             let { item } = action;
-            state.push(item);
+            item.id = currentID++;
+            console.log(item);
+            return [...state, item];
             break;
         case ActionTypes.REMOVE_DEMO_2:
-            let {id} = action;
-            let itemRemove = state.filter({id: id})[0];
-            state = state.splice(state.indexOf(item), 1);
+            let { id } = action;
+            return state.filter((o, i) => o.id != id);
             break;
         default:
             break;

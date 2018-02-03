@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import ActionRedux from './action';
 
 const style = {
-    backgroundColor: '#9fadec',
     minHeight: '400px',
     width: '80%',
     margin: '20px auto',
     padding: '25px'
 }
 
-export class DemoRedux extends Component {
+class DemoRedux extends Component {
     constructor(props) {
         super(props);
 
@@ -20,23 +19,24 @@ export class DemoRedux extends Component {
     render() {
         return (
             <div style={style}>
-                <ActionRedux/>
+
+                <img
+                    src="https://static01.nyt.com/images/2017/07/01/sports/01NBAFREEAGENCYweb1/01NBAFREEAGENCYweb1-master768.jpg"
+                    alt="basketball" width="500"
+                    style={{ display: this.props.displayImage ? 'initial' : 'none' }} />
+
+                <ActionRedux />
+
             </div>
         )
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
     return {
-        demo1: state.Demo1,
+        displayImage: state.Demo1,
         demo2: state.Demo2
     }
 }
 
-const mapDispatchToProps = (dispatch, props) => {
-    return {
-
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(DemoRedux);
+export default connect(mapStateToProps)(DemoRedux);

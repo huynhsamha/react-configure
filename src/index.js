@@ -7,6 +7,7 @@ import thunk from 'redux-thunk';
 // Libs
 import './lib/jquery';
 import './lib/bootstrap';
+import './lib/font-awesome';
 
 // Styles
 import './index.css';
