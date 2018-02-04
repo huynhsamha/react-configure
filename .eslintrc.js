@@ -81,7 +81,10 @@ module.exports = {
     'no-case-declarations': 0,
     'import/no-mutable-exports': 0,
     'import/extensions': 0,
-    'react/jsx-filename-extension': [1, { "extensions": [".js", ".jsx"] }]
+    'react/jsx-filename-extension': [1, { "extensions": [".js", ".jsx"] }],
+    'jsx-a11y/href-no-hash': 0,
+    'jsx-a11y/anchor-is-valid': 0,
+    'jsx-a11y/img-redundant-alt': 0
   },
   'globals': {
     by: true,
