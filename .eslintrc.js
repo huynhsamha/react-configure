@@ -3,10 +3,11 @@ module.exports = {
     "airbnb",
     "plugin:jsx-a11y/recommended"
   ],
- "parserOptions": {
-    "ecmaVersion": 6,
+  "parserOptions": {
+    "ecmaVersion": 9,
     "sourceType": "module",
     "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
       "jsx": true
     }
   },
@@ -79,9 +80,18 @@ module.exports = {
     'no-plusplus': 0,
     'eqeqeq': 0,
     'no-case-declarations': 0,
+    'class-methods-use-this': 0,
+    'prefer-destructuring': 0,
+    // import plugin
     'import/no-mutable-exports': 0,
     'import/extensions': 0,
+    'import/first': 0,
+    'import/no-named-as-default': 0,
+    // react plugin
     'react/jsx-filename-extension': [1, { "extensions": [".js", ".jsx"] }],
+    'react/prefer-stateless-function': 0,
+    'react/forbid-prop-types': 0,
+    // jsx-a11y plugin
     'jsx-a11y/href-no-hash': 0,
     'jsx-a11y/anchor-is-valid': 0,
     'jsx-a11y/img-redundant-alt': 0
