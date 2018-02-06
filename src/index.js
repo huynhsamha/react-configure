@@ -5,21 +5,19 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
 // Libs
-import './lib/jquery';
-import './lib/bootstrap';
-import './lib/font-awesome';
+import './lib';
 
 // Styles
-import './index.css';
+import './styles/index.css';
 
 // Components
-import App from './App';
+import App from './components/layout/App';
 import registerServiceWorker from './registerServiceWorker';
 
 // Config redux
-import reducer from './reducers';
+import allReducers from './reducers';
 
-const store = createStore(reducer, applyMiddleware(thunk));
+const store = createStore(allReducers, applyMiddleware(thunk));
 
 ReactDOM.render(
 

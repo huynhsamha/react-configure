@@ -433,8 +433,8 @@ or
 ## Configure
 ### Constants, Actions, Reducers
 
-1. In `src`, create dir and files: 
-    + `constants/action-types.js`: declare action name as const
+1. In `src`, create dir and files:
+    + `actions/action-types.js`: declare action name as const
     + `actions/index.js`: declare actions for redux
     + `reducers/`: declare reducers
     + `reducers/[demo-name].js`: declare action for a specific object.

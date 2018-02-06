@@ -1,4 +1,4 @@
-import { ActionTypes } from './../constants/action-types';
+import actionTypes from '../actions/action-types';
 
 const initialState = [];
 
@@ -10,18 +10,17 @@ for (let i = 0; i < currentID; i++) initialState.push({
 const reducer = (state = initialState, action) => {
   // console.log('reducer demo2');
   switch (action.type) {
-    case ActionTypes.ADD_DEMO_2:
+    case actionTypes.ADD_DEMO_2:
       const { item } = action;
       item.id = currentID++;
       console.log(item);
       return [...state, item];
-    case ActionTypes.REMOVE_DEMO_2:
+    case actionTypes.REMOVE_DEMO_2:
       const { id } = action;
-      return state.filter((o, i) => o.id != id);
+      return state.filter((o, i) => o.id !== id);
     default:
-      break;
+      return state;
   }
-  return state;
 };
 
 export default reducer;

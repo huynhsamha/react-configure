@@ -1,0 +1,16 @@
+@import './../../../styles/variables.scss';
+
+.Footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	min-height: 40px;
+	line-height: 40px;
+	background-color: lighten($blue, 20%);
+	text-align: center;
+	font-family: $font-family-Open-Sans;
+	font-weight: 900;
+	font-size: $font-size-large;
+	color: white;
+}

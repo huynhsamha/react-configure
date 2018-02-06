@@ -1,6 +1,6 @@
 import Env from './../environments';
 
-export class DbService {
+export default class DbService {
 
   static baseUrl() { return Env.baseUrl; }
   static parseUrl(url) { return DbService.baseUrl() + url; }
@@ -23,5 +23,3 @@ export class DbService {
     }).then(res => res.json());
   }
 }
-
-export default DbService;

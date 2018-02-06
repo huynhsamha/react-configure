@@ -1,0 +1,13 @@
+@import './../../../styles/variables.scss';
+
+.Header {
+	width: 100%;
+	min-height: 40px;
+	line-height: 40px;
+	background-color: $green;
+	text-align: center;
+	font-family: $font-family-Open-Sans;
+	font-weight: 900;
+	font-size: $font-size-large;
+	color: white;
+}

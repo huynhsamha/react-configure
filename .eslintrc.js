@@ -82,6 +82,7 @@ module.exports = {
     'no-case-declarations': 0,
     'class-methods-use-this': 0,
     'prefer-destructuring': 0,
+    'no-alert': 0,
     // import plugin
     'import/no-mutable-exports': 0,
     'import/extensions': 0,
