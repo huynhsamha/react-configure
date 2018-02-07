@@ -1,56 +1,69 @@
 # create-react-app-config
-create-react-app with redux, sass, code spliting, router, jQuery, ...
+----------------------
+
+Config [create-react-app](https://github.com/facebook/create-react-app) with [redux](https://redux.js.org/docs/basics/UsageWithReact.html), router, sass, code spliting, jQuery, bootstrap,...
 
 
-Table of Contents:
-- [create-react-app-config](#create-react-app-config)
-- [Start with create-react-app](#start-with-create-react-app)
+----------------------
+
+
+## Table of Contents
+- [Start with `create-react-app`](#start-with-create-react-app)
 - [Config environment variables](#config-environment-variables)
 - [Post-Processing CSS:](#post-processing-css)
 - [CSS Preprocessor (Sass, Less etc.)](#css-preprocessor-sass-less-etc)
-- [Create server node](#create-server-node)
-	- [express to init node](#express-to-init-node)
-	- [config server express](#config-server-express)
-	- [install dependencies package](#install-dependencies-package)
-	- [add package cors](#add-package-cors)
-	- [start server-client](#start-server-client)
+- [Create Node.JS server](#create-nodejs-server)
+	- [Use `express` to initialization](#use-express-to-initialization)
+	- [Configuration](#configuration)
+	- [Install dependencies package](#install-dependencies-package)
+	- [Install package `cors`](#install-package-cors)
+	- [Start server-client](#start-server-client)
 - [Environment for react app](#environment-for-react-app)
-- [Remove default component App](#remove-default-component-app)
+- [Organize `src` react app](#organize-src-react-app)
+	- [Styles](#styles)
+	- [Library and packages](#library-and-packages)
+	- [Utility service](#utility-service)
+	- [Reducers - Actions](#reducers---actions)
+	- [Components](#components)
+		- [Layout Components](#layout-components)
+		- [Common Components](#common-components)
+		- [Pages Components](#pages-components)
 - [jQuery](#jquery)
 	- [Installation](#installation)
 	- [How to use?](#how-to-use)
 	- [Recommend](#recommend)
-- [Bootstrap 4](#bootstrap-4)
+- [Bootstrap 3, 4](#bootstrap-3-4)
 	- [Use along with jQuery](#use-along-with-jquery)
 		- [Installation](#installation)
 		- [How to use?](#how-to-use)
-	- [Use via React Component - reactstrap](#use-via-react-component---reactstrap)
+	- [Use via React Component - `reactstrap`](#use-via-react-component---reactstrap)
 		- [Installation and Usage](#installation-and-usage)
 	- [Recommend](#recommend)
 - [Font Awesome](#font-awesome)
 	- [Add via `index.html`](#add-via-indexhtml)
 	- [Add via npm package](#add-via-npm-package)
-- [`react-router-dom` (router) and `react-loadable` (code-splitting)](#react-router-dom-router-and-react-loadable-code-splitting)
-	- [Install `react-loadable, react-router-dom`](#install-react-loadable-react-router-dom)
-	- [Create a Loading Component](#create-a-loading-component)
-	- [Use `react-loadable` to create new component](#use-react-loadable-to-create-new-component)
-	- [Create Demo Router](#create-demo-router)
-	- [Use `react-router-dom` with loadable components](#use-react-router-dom-with-loadable-components)
-	- [Test loadable components:](#test-loadable-components)
+- [`react-router-dom` (router)](#react-router-dom-router)
+- [`react-loadable` (code-splitting)](#react-loadable-code-splitting)
+	- [Installation, Usage](#installation-usage)
+	- [Test Loadable Components - code-splitting](#test-loadable-components---code-splitting)
 - [Redux: `redux, react-redux, redux-thunk`](#redux-redux-react-redux-redux-thunk)
 	- [Installation](#installation)
-	- [Configure](#configure)
-		- [Constants, Actions, Reducers](#constants-actions-reducers)
+	- [Usage](#usage)
 - [Fetch Data API to server node](#fetch-data-api-to-server-node)
 	- [Create `services` to get API](#create-services-to-get-api)
 - [UI Awesome with React Component](#ui-awesome-with-react-component)
-	- [Reveal Component on scroll: use react-reveal](#reveal-component-on-scroll-use-react-reveal)
+	- [Reveal Component on scroll: use `react-reveal`](#reveal-component-on-scroll-use-react-reveal)
 		- [Installation](#installation)
 		- [Support](#support)
 			- [Reveal with React](#reveal-with-react)
 			- [Animated.css with React](#animatedcss-with-react)
 		- [How to use?](#how-to-use)
 - [VS Code Extensions](#vs-code-extensions)
+	- [Icons, Colors, View](#icons-colors-view)
+	- [Snippets](#snippets)
+	- [Intellisence](#intellisence)
+	- [Lint Code, Formater](#lint-code-formater)
+	- [Edit, Preview README - Markdown files](#edit-preview-readme---markdown-files)
 - [VS Code User Settings](#vs-code-user-settings)
 
 
@@ -59,35 +72,28 @@ Table of Contents:
 
 
 
-# Start with create-react-app
-Create react app from create-react-app:
 
-`create-react-app react-app`
+# Start with `create-react-app`
+In this step, you should have `create-react-app` is installed global.
 
-1. combine .gitignore from react-app to ./../
-2. remove README.md from react-app
-3. remove .gitignore from react-app
-4. move all ./react-app to ./../
-5. use `npm start` or `yarn start` to start development
-6. use `npm build` or `yarn build` to build production
+1. Create new app: `create-react-app react-app`
+2. use `npm start` or `yarn start` to start development
+3. use `npm build` or `yarn build` to build production
 
-
+In this tutorial, I will use `yarn`, you can also use `npm`.
 
 
 
 
 # Config environment variables
-Create files env, `create-react-app` will use them.
+Create environment files, `create-react-app` will use them.
 
-`touch .env .env.development .env.production`
+1. In terminal at root: `touch .env .env.development .env.production`
+2. In `.env.development`: `REACT_APP_ENV=development`
+3. In `.env.production` : `REACT_APP_ENV=production`
 
-In `.env.development`: set var REACT_APP_ENV is development
-`REACT_APP_ENV=development`
-
-In `.env.production`: set var REACT_APP_ENV is production
-`REACT_APP_ENV=production`
-
-Only var with prefix `REACT_APP_` can use in `create-react-app`
+You can also set new environment variable.
+**Note:** only variable with prefix `REACT_APP_` can use in `create-react-app`
 
 
 
@@ -96,9 +102,9 @@ Only var with prefix `REACT_APP_` can use in `create-react-app`
 
 
 # Post-Processing CSS:
-This project setup minifies your CSS and adds vendor prefixes to it automatically through Autoprefixer so you don’t need to worry about it.
+As `create-react-app` said:
 
-
+> This project setup minifies your CSS and adds vendor prefixes to it automatically through Autoprefixer so you don’t need to worry about it.
 
 
 
@@ -108,13 +114,9 @@ This project setup minifies your CSS and adds vendor prefixes to it automaticall
 
 # CSS Preprocessor (Sass, Less etc.)
 
-`npm install --save node-sass-chokidar npm-run-all`
-
-should use: `yarn add node-sass-chokidar npm-run-all`
-
-file `json`:
-
-```
+1. In terminal: `yarn add node-sass-chokidar npm-run-all`
+2. In file `package.json`:
+```json
 {
     "scripts": {
     -   "start": "react-scripts start",
@@ -128,8 +130,7 @@ file `json`:
   }
 }
 ```
-
-file `.gitignore`:
+3. In file `.gitignore`:
 
 ```
 # auto generated files (sass, less, ...)
@@ -144,9 +145,9 @@ src/**/*.css
 
 
 
-# Create server node
+# Create Node.JS server
 
-## express to init node
+## Use `express` to initialization
 
 ```bash
 mkdir server
@@ -154,35 +155,32 @@ cd server
 express
 ```
 
-## config server express
+## Configuration
 
-1. rename app.js to server.js
-2. join server.js and ./bin/www
-3. correct file server.js
-4. move server.js to root
-5. insert dependencies in package.json to package.json in root
-6. remove dependencies not use (serve-favicon, jade)
-7. remove all file in server, execpt routes/index.js
-
-## install dependencies package
-
-`yarn` or `npm install`
-
-## add package cors
-
-Using package cors to cross localhost:3000 (client-side, is react) to localhost:4200 (server-side, is node express)
-
-`yarn add cors` or `npm install --save cors`
-
-## start server-client
-
-client side (react): localhost:3000
-`yarn start` or `npm start`
-
-server-side (node express): localhost:4200
-`node server`
+1. Rename `app.js` to `server.js`
+2. Join `server.js` and `./bin/www`
+3. Move `server.js` to root app
+4. Insert dependencies in `package.json` (which is generated by `express`) to `package.json` in root (which is generated by `create-react-app`)
+5. Remove dependencies not use (`serve-favicon`, `jade`, `ejs`, etc.)
+6. Remove all file in `server`, execpt `routes/index.js`
+7. Correct and customize file `server.js`
 
 
+## Install dependencies package
+
+`yarn`
+
+## Install package `cors`
+
+For development, use package `cors` to cross `localhost:3000` (client-side, is react app) to `localhost:4200` (server-side, is node express)
+
+`yarn add cors`
+
+## Start server-client
+
+`yarn start` or `npm start`: start client side (react): `localhost:3000`
+
+`node server`: start server-side (node express): `localhost:4200`
 
 
 
@@ -193,17 +191,16 @@ server-side (node express): localhost:4200
 
 
 # Environment for react app
+In development, because we use node server at port 4200, but client side is port 3000, so we should check out environment variable `REACT_APP_ENV` (which created in above steps) to fetch data from server.
 
+1. Create environment files:
+In your terminal:
 ```bash
 mkdir src/environments
 cd src/environments
 touch env.development.js env.production.js index.js
 ```
-
-1. create file as source code
-2. in development, use `localhost:4200` as server, so you can detect env to use `baseUrl API`, in production, `baseUrl` then is only `/`
-
-Only var with prefix `REACT_APP_` can use in `create-react-app`
+2. Edit the files as source code. `baseUrl` is url to server.
 
 
 
@@ -211,14 +208,40 @@ Only var with prefix `REACT_APP_` can use in `create-react-app`
 
 
 
+# Organize `src` react app
 
-# Remove default component App
-1. change extension to .jsx
-2. remove `logo.svg`
-3. change `.css` to `.scss` (auto generated)
-4. remove all style
+## Styles
+Create `styles` in `src/` to contain variables, mixins, classes, common styles, or theme, etc. for your app:
+	+ `_variables.scss`: declare variables for style.
+	+ `_mixins.scss`: declare mixins for style
+	+ `_classes.scss`: declare some util classes for style
+	+ `index.scss`: import `_` files to this file, you should move `index.scss` (in root) to this folder, and in `index.js`, you only import `./styles/index.css`
+	+ You also override some theme (such as AdminLTE, Bootstrap, Material, Angular, Datatables, Charts, ...) with files `_` and import to `index.scss`
 
+## Library and packages
+Create `lib` in `src` to contain some library or package you use in this app, or config something with these packages (such as jQuery, Bootstrap, Font-Awesome, Ionicons, Material, ...):
+	+ You also create `index.js` in `lib` to import these files in folder.
+	+ In `index.js` in root, you only import by one line: `import './lib';`
 
+## Utility service
+Create `services` to contain your services for app. Guides is below sections
+
+## Reducers - Actions
+Create `actions`, `reducers` to do with `redux`. Guides is below sections
+
+## Components
+Create `components` to contain components in app:
+Guides for these components is below sections
+
+### Layout Components
+- Create `layout` in `components` to contain layout of app (flow).
+- Your `App.js`, `App.scss` also in here, which import `Header`, `Footer`, `Sidebar`, `Menu`, `Body`,... for Navigations and Router
+
+### Common Components
+Create `common` in `components` to contain some components which is used a lot of times. Such as `Loading`, `Modal`, `Alert`, `Notification`, `Box`, ...
+
+### Pages Components
+Create `pages` in `components` to contain some pages in app, which is route in component `Body`, such as `Home`, `Dashboard`, `Profile`, `Form`, `Terms of Service`, `Support`, `Page not found`, `Error page`,...
 
 
 
@@ -229,12 +252,11 @@ Only var with prefix `REACT_APP_` can use in `create-react-app`
 # jQuery
 
 ## Installation
-1. `yarn add jquery` or `npm install --save jquery`
-2. `mkdir src/lib`
-3. `touch src/lib/jquery.js`
-4. edit created file by following lines:
+1. In terminal: `yarn add jquery`
+2. In terminal: `touch src/lib/jquery.js`
+3. Edit created file by following lines:
 
-```javascript
+```js
 import $ from 'jquery';
 
 // config jquery variables for other lib use jQuery (such as bootstrap)
@@ -243,9 +265,10 @@ window.jQuery = $;
 ```
 
 ## How to use?
-1. In `index.js`, import config as: `import './lib/jquery';`
-2. In the component, to use jQuery, you should import: `import $ from 'jquery';`
-3. To declare jquery function, only use in `componentDidMount()`, such as:
+1. In `lib/index.js`, import by: `import './jquery';`
+2. In `index.js` at root, `import './lib';` (if you don't have).
+3. In the component, to use jQuery, you should import: `import $ from 'jquery';`
+4. To use jquery function, only use from `componentDidMount()` in Lifecycle React components:
 
 ```javascript
   componentDidMount() {
@@ -255,7 +278,7 @@ window.jQuery = $;
     });
   }
 ```
-4. Can view `demo-jquery-bootstrap`
+5. Can view `demo-js-bs-rs` for demo about jQuery
 
 ## Recommend
 Not use jQuery if it's not needed
@@ -265,13 +288,15 @@ Not use jQuery if it's not needed
 
 
 
-# Bootstrap 4
+# Bootstrap 3, 4
+
+
 ## Use along with jQuery
 ### Installation
-1. `yarn add bootstrap` or `npm install --save bootstrap`
-2. `mkdir src/lib` (if you have `lib`, skip this step)
-3. `touch src/lib/bootstrap.js`
-4. edit created file as lines:
+1. In terminal: `yarn add bootstrap` (add @version you choose)
+2. In terminal: `mkdir src/lib` (if you have `lib`, skip this step)
+3. In terminal: `touch src/lib/bootstrap.js`
+4. Edit created file as lines (In this tutorial, I use bootstrap 4):
 
 ```javascript
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -279,15 +304,22 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 ```
 
 ### How to use?
-1. In `index.js`, import by: `import './lib/bootstrap';`
-2. In the component, you can use bootstrap 4 as document available
-3. Can view `demo-jquery-bootstrap`
+1. In `lib/index.js`, import by: `import './bootstrap';`
+2. In `index.js` at root, `import './lib';` (if you don't have).
+3. In the component, you can use bootstrap 3, 4 as document available
+4. Can view `demo-js-bs-rs` for demo about Bootstrap
 
-## Use via React Component - reactstrap
+
+
+
+
+
+## Use via React Component - `reactstrap`
+
 ### Installation and Usage
-1. `yarn add reactstrap@next` or `npm install --save reactstrap@next`
+1. In terminal: `yarn add reactstrap@next`
 2. Only import Component to use as reactstrap document
-3. Can view `demo-jquery-bootstrap`
+3. Can view `demo-js-bs-rs` for demo about reactstrap
 
 ## Recommend
 1. I think you should use `reactstrap` if you want use some component in react, with event handle.
@@ -302,118 +334,51 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 # Font Awesome
 ## Add via `index.html`
 
-You can include via file `index.html` in folder `public`
+You can include via file `index.html` in folder `public` via `cdn` or download and `link stylesheet`
+
 
 ## Add via npm package
 
-1. `yarn add font-awesome` or `npm install --save font-awesome`
-2. In file `index.js`, import it: `import 'font-awesome/css/font-awesome.min.css';`
+1. In terminal: `yarn add font-awesome`
+2. Create file `lib/font-awesome.js` and add line `import 'font-awesome/css/font-awesome.min.css';`
+3. In `lib/index.js`, import by: `import './font-awesome';`
+4. In `index.js` at root, `import './lib';` (if you don't have).
 
 
 
 
 
-# `react-router-dom` (router) and `react-loadable` (code-splitting)
+# `react-router-dom` (router)
+`react-router-dom` is used for route Single Page Application (SPA), not loading again page.
 
-## Install `react-loadable, react-router-dom`
-
-`yarn add react-loadable react-router-dom`
-or
-`npm install --save react-loadable react-router-dom`
-
-1. `react-loadable`: to code-splitting
-    + that means lazy load components until it's called by user, it speed up your Single Page App (SPA).
-    + `create-react-app` will bundle new script file, when it's called, it will import this file to app.
-2. `react-router-dom`: to router for SPA, not loading again all page.
+1. In terminal: `yarn add react-router-dom`
+2. You can view implment in `components/layout/body`
 
 
-## Create a Loading Component
-1. Create Loading component
-2. When use Loadable with loading component, it will add props to this component, such as:
+
+
+# `react-loadable` (code-splitting)
+
+## Installation, Usage
+
+`react-loadable` is useful for code-splitting:
++ Lazy load components until it's called by user, it speed up your Single Page App (SPA).
++ `create-react-app` will bundle new script file, when it's called, it will import this file to app.
+
+1. In terminal: `yarn add react-loadable react-router-dom`
+2. Create Loading component (view components/common/loading/)
+3. When use Loadable with loading component, it will add props to this component, such as:
     `{ isLoading: true, pastDelay: false, timedOut: false, error: null }`
+4. View `components/page/demo-loadable-component` to sample implement.
+5. Component `DemoLoadableComponent` (is not loadable) and `LoadableDemoComponent` (is loadable)
 
-
-## Use `react-loadable` to create new component
-1. View `demo-loadable-component` to sample implement.
-2. View component `demo-loadable-component.jsx` (not loadable) and `loadable-demo-component.jsx` (loadable)
-
-
-## Create Demo Router
-
-1. `mkdir src/demo-router`
-2. `touch src/demo-router/demo-router.jsx`
-3. `mkdir src/demo-router/link-1`
-4. craete simple component with `demo-router` and `link-1`
-5. copy `link-1` and paste to `link-2` and `link-3`
-6. try import `loadable` with `demo-router` with `link-1, link-2, link-3`
-
-Demo for above steps:
-```jsx
-// demo-router.jsx
-
-// declare style
-const DemoRouterStyle = {
-    width: '80%',
-    margin: '20px auto',
-    minHeight: '100px',
-    backgroundColor: '#cacaca',
-    padding: '25px'
-}
-
-render() {
-    return (
-        <div style={DemoRouterStyle}>
-            <LoadableLink1 />
-            <LoadableLink2 />
-            <LoadableLink3 />
-        </div>
-    )
-}
-```
-
-
-## Use `react-router-dom` with loadable components
-1. In `demo-router.jsx`: 
-2. `import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';`
-3. `<Router>` only one child
-4. Route with components:
-
-```jsx
-<Switch>
-    <Route exact path="/link-1" component={LoadableLink1} />
-    <Route exact path="/link-2" component={LoadableLink2} />
-    <Route exact path="/link-3" component={LoadableLink3} />
-    <Route render={(props) => <div>Page Not Found</div>}/>
-</Switch>
-```
-
-5. Link to route
-
-```jsx
-<Link to="/link-1">Link to 1</Link>
-<Link to="/link-2">Link to 2</Link>
-<Link to="/link-3">Link to 3</Link>
-<Link to="/link-page-not-found">Link to Page Not Found</Link>
-```
-
-## Test loadable components:
+## Test Loadable Components - code-splitting
 1. Inspect element in browser
 2. Choose tab network
 3. Click filter JS
 4. Refresh page
-5. first only `bundle.js` and some js file
-6. click link-1, you see `*.chunk.js` is loaded
-7. continue with link-2, link-3, you also see new `chunk file` is loaded by browser
-8. That is lazy loading component
-
-
-
-
-
-
-
-
-
+5. First only `bundle.js` and some js file
+6. Click component which loadable, you see `*.chunk.js` is loaded. That is lazy loading component
 
 
 
@@ -424,15 +389,11 @@ render() {
 
 
 # Redux: `redux, react-redux, redux-thunk`
+
 ## Installation
 `yarn add redux react-redux redux-thunk`
-or
-`npm install --save redux react-redux redux-thunk`
 
-
-## Configure
-### Constants, Actions, Reducers
-
+## Usage
 1. In `src`, create dir and files:
     + `actions/action-types.js`: declare action name as const
     + `actions/index.js`: declare actions for redux
@@ -444,8 +405,8 @@ or
     + `import { Provider } from 'react-redux';`: use Provider to store redux
     + `import { createStore, applyMiddleware } from 'redux';`: use createStore and middleware `thunk` with createStore
     + `import thunk from 'redux-thunk';`: middleware for createStore, support async function
-    + `import reducer from './reducers';`: reducers after combined
-    + `const store = createStore(reducer, applyMiddleware(thunk));`: createStore with combined reducer, and apply middleware thunk
+    + `import allReducers from './reducers';`: reducers after combined
+    + `const store = createStore(allReducers, applyMiddleware(thunk));`: createStore with combined reducer, and apply middleware thunk
 
 3. In `reducers/index.js`: combine reducers
 ```js
@@ -474,26 +435,17 @@ export default reducers;
 
 
 
-
-
-
-
-
-
-
-
-
 # Fetch Data API to server node
 ## Create `services` to get API
 1. `mkdir src/services` (if you have not)
 2. `touch db-service.js auth-service.js` (db- to get database, auth- to authentication user)
 3. Example with `db-service.js`:
     + `import Env from './../environments';`: to get `baseUrl` with environments
-    + `export class DbService` as static class
+    + `export default class DbService` as static class
     + set baseUrl to get API:
-```js
-static baseUrl = Env.baseUrl;
-static parseUrl = (url) => DbService.baseUrl + url; 
+```jsx
+static baseUrl() { return Env.baseUrl; }
+static parseUrl(url) { return DbService.baseUrl() + url; }
 ```
 
 Example `get` API:
@@ -534,15 +486,15 @@ Example `Post` API:
 
 
 # UI Awesome with React Component
-## Reveal Component on scroll: use react-reveal
+
+
+## Reveal Component on scroll: use `react-reveal`
+
 ### Installation
 `yarn add react-reveal` 
 
-or 
-
-`npm install --save react-reveal`
-
 ### Support
+
 #### Reveal with React
 ```
 Fade
@@ -590,35 +542,80 @@ Tada
 
 
 
-# VS Code Extensions
-should install the below extensions I think helpful:
 
-1. Auto Close Tag
-2. Auto Rename Tag
-3. Bootstrap 3 Snippets
-4. Bootstrap 4 & Font awesome snippets
-5. Bracket Pair Colorizer
-6. EditorConfig for VS Code
-7. ESLint
-8. Font-awesome codes for css
-9. Font-awesome codes for html
-10. HTML CSS suppport
-11. HTML Snippets
-12. IntelliSense for CSS class names
-13. JavaScript (ES6) code snippets
-14. Markdown All in One
-15. Markdown PDF
-16. npm
-17. npm INtellisence
-18. Path Intellisense
-19. Prettier - Code formatter
-20. Sass
-21. Sass Formatter
-22. SCSS IntelliSence
-23. TSLint
-24. vscode-icons
-25. Beautify css/sass/scss/less
-26. ES7 React/Redux/GraphQL/React-Native snippets
+
+
+
+
+
+
+
+
+
+
+
+
+
+# VS Code Extensions
+I think following extensions is helpful for development:
+
+## Icons, Colors, View
+[vscode-icons](https://marketplace.visualstudio.com/items?itemName=robertohuertasm.vscode-icons)
+[Bracket Pair Colorizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer)
+
+## Snippets
+[ES7 React/Redux/GraphQL/React-Native snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
+[JavaScript (ES6) code snippets](https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets)
+[Bootstrap 3 Snippets](https://marketplace.visualstudio.com/items?itemName=wcwhitehead.bootstrap-3-snippets)
+[Bootstrap 4 & Font awesome snippets](https://marketplace.visualstudio.com/items?itemName=thekalinga.bootstrap4-vscode)
+[Font-awesome codes for html](https://marketplace.visualstudio.com/items?itemName=medzhidov.font-awesome-codes-html)
+[Font-awesome codes for css](https://marketplace.visualstudio.com/items?itemName=medzhidov.font-awesome-codes-css)
+[HTML Snippets](https://marketplace.visualstudio.com/items?itemName=abusaidm.html-snippets)
+[HTML CSS suppport](https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css)
+
+## Intellisence
+[npm](https://marketplace.visualstudio.com/items?itemName=eg2.vscode-npm-script)
+[npm Intellisence](https://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense)
+[Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
+[SCSS IntelliSence](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-scss)
+[Auto Close Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag)
+[Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)
+[IntelliSense for CSS class names](https://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion)
+
+## Lint Code, Formater
+[Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+[EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
+[ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+[TSLint](https://marketplace.visualstudio.com/items?itemName=eg2.tslint)
+[Sass](https://marketplace.visualstudio.com/items?itemName=robinbentley.sass-indented)
+[Sass Formatter](https://marketplace.visualstudio.com/items?itemName=sasa.vscode-sass-format)
+[Beautify css/sass/scss/less](https://marketplace.visualstudio.com/items?itemName=michelemelluso.code-beautifier)
+
+
+## Edit, Preview README - Markdown files
+[Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
+[Markdown Preview Enhanced](https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced)
+[Markdown PDF](https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -631,11 +628,14 @@ should install the below extensions I think helpful:
 
 
 # VS Code User Settings
-you also setting by:
 
-1. `Ctrl + Shift P`
-2. Search `user settings` and `enter`
-3. And below settings I think helpful
+I think you also setting your VSCode by following steps:
+
+1. Enter `Ctrl + Shift P`
+2. Search `user settings`
+3. Choose `Preferences: Open User Settings` and enter.
+4. Edit your file `User Settings` by following lines:
+(you can search in `Default Settings` and customize your style)
 
 ```json
 {
