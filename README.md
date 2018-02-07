@@ -278,7 +278,7 @@ window.jQuery = $;
     });
   }
 ```
-5. Can view `demo-js-bs-rs` for demo about jQuery
+5. View demo with component `DemoJquery`.
 
 ## Recommend
 Not use jQuery if it's not needed
@@ -307,7 +307,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 1. In `lib/index.js`, import by: `import './bootstrap';`
 2. In `index.js` at root, `import './lib';` (if you don't have).
 3. In the component, you can use bootstrap 3, 4 as document available
-4. Can view `demo-js-bs-rs` for demo about Bootstrap
+4. View demo with component `DemoBootstrap`.
 
 
 
@@ -319,7 +319,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 ### Installation and Usage
 1. In terminal: `yarn add reactstrap@next`
 2. Only import Component to use as reactstrap document
-3. Can view `demo-js-bs-rs` for demo about reactstrap
+3. View demo with component `DemoReactstrap`.
 
 ## Recommend
 1. I think you should use `reactstrap` if you want use some component in react, with event handle.
@@ -524,7 +524,7 @@ Tada
 
 ### How to use?
 1. Use http://www.react-reveal.com/examples/.
-2. View demo: `demo-react-reveal.jsx`
+2. View demo with component `DemoReactReveal`.
 
 
 
