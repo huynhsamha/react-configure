@@ -2,6 +2,7 @@
   "name": "react-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://huynhsamha.github.io/create-react-app-config",
   "scripts": {
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm-run-all build-css build-js",
