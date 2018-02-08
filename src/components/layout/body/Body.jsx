@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
-import './Body.css';
 
 import DemoJquery from './../../pages/demo-jquery/DemoJquery';
 import DemoBootstrap from './../../pages/demo-bootstrap/DemoBootstrap';
@@ -10,6 +9,8 @@ import DemoLoadableComponent from './../../pages/demo-loadable-component/Loadabl
 import DemoReactReveal from './../../pages/demo-react-reveal/DemoReactReveal';
 import DemoRedux from './../../pages/demo-redux/DemoRedux';
 
+import('./Body.css').then().catch(err => console.log(err));
+
 export default class Body extends Component {
   render() {
     return (
@@ -17,6 +18,7 @@ export default class Body extends Component {
         <Router>
           <div>
             <ul>
+              <li><Link to="/jquery">Demo Jquery</Link></li>
               <li><Link to="/bootstrap">Demo Bootstrap</Link></li>
               <li><Link to="/reactstrap">Demo Reactstrap</Link></li>
               <li><Link to="/react-loadable">Demo react-loadable</Link></li>

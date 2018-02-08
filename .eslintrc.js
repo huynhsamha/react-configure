@@ -3,11 +3,13 @@ module.exports = {
     "airbnb",
     "plugin:jsx-a11y/recommended"
   ],
+  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 9,
     "sourceType": "module",
     "ecmaFeatures": {
       "experimentalObjectRestSpread": true,
+      "allowImportExportEverywhere": true,
       "jsx": true
     }
   },
