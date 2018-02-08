@@ -2,9 +2,16 @@
   "name": "react-app",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "node": ">=6.10.0",
-    "npm": ">=3.10.8"
+  "scripts": {
+    "start": "npm-run-all -p watch-css start-js",
+    "build": "npm-run-all build-css build-js",
+    "start-js": "react-scripts start",
+    "build-js": "react-scripts build",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "eslint": "eslint ./server.js ./src/**/**/*.js ./server/**/**/*.js --ext=js --ext=jsx --fix"
   },
   "dependencies": {
     "babel-eslint": "^8.2.1",
@@ -32,22 +39,32 @@
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0"
   },
-  "scripts": {
-    "start": "npm-run-all -p watch-css start-js",
-    "build": "npm-run-all build-css build-js",
-    "start-js": "react-scripts start",
-    "build-js": "react-scripts build",
-    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
-    "build-css": "node-sass-chokidar src/ -o src/",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "eslint": "eslint ./server.js ./src/**/**/*.js ./server/**/**/*.js --ext=js --ext=jsx --fix"
-  },
   "devDependencies": {
     "eslint": "^4.17.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.6.1"
-  }
+  },
+  "engines": {
+    "node": ">=6.10.0",
+    "npm": ">=3.10.8"
+  },
+  "keywords": [
+    "react",
+    "create-react-app",
+    "code-splitting",
+    "redux",
+    "redux-thunk",
+    "reactjs",
+    "react-router",
+    "react-redux",
+    "react-router-dom",
+    "starter-kit",
+    "sass",
+    "step",
+    "react-loadable",
+    "react-scrollchor",
+    "scroll"
+  ]
 }
