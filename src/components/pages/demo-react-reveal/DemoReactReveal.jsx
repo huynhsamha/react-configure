@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Fade, Flip, Rotate, Zoom, Slide, Roll, Bounce, LightSpeed } from 'react-reveal';
 
 const style = {
-  width: '60%',
-  margin: '40px auto',
+  width: '84%',
+  margin: '25px auto',
   textAlign: 'justify'
 };
 

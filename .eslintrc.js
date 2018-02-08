@@ -94,6 +94,7 @@ module.exports = {
     'react/jsx-filename-extension': [1, { "extensions": [".js", ".jsx"] }],
     'react/prefer-stateless-function': 0,
     'react/forbid-prop-types': 0,
+    'react/jsx-max-props-per-line': 0,
     // jsx-a11y plugin
     'jsx-a11y/href-no-hash': 0,
     'jsx-a11y/anchor-is-valid': 0,

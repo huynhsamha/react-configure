@@ -1,0 +1,38 @@
+@import './../../../styles/variables.scss';
+
+.DemoReactScrollchor {
+	width: 100%;
+	padding: 15px 10px;
+	border: $blue 2px solid;
+	position: relative;
+
+	nav {
+		font-size: $font-size-medium;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: 100%;
+		img {
+			border-radius: 6px;
+			width: 45px;
+			height: 45px;
+			object-fit: cover;
+		}
+	}
+
+	padding-top: 40px;
+
+	.app-section {
+		width: 100%;
+		padding: 20px 10px;
+		margin-top: 30px;
+		&.footer {
+			padding: 12px;
+			background-color: $orange;
+			a {
+				color: white !important;
+				font-size: $font-size-medium;
+			}
+		}
+	}
+}

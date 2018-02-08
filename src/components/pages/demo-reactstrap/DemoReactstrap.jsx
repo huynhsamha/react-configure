@@ -25,7 +25,7 @@ export default class DemoReactstrap extends Component {
               <img
                 src="https://cdn-images-1.medium.com/max/1800/1*HSisLuifMO6KbLfPOKtLow.jpeg"
                 alt="Banner React"
-                width="800"
+                width="100%"
               />
             </CardBody>
           </Card>

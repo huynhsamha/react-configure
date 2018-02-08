@@ -2,11 +2,7 @@ import React, { Component } from 'react';
 
 import $ from 'jquery';
 
-const style = {
-  width: '80%',
-  margin: '20px auto',
-  padding: '25px'
-};
+import('./DemoJquery.css');
 
 export default class DemoJquery extends Component {
   constructor(props) {
@@ -25,13 +21,14 @@ export default class DemoJquery extends Component {
 
   render() {
     return (
-      <div style={style}>
-        <button id="btnToggle">Click to toggle image</button>
+      <div className="DemoJquery">
+        <button id="btnToggle" className="jq-button">Click to toggle image</button>
+        <br />
         <div id="banner">
           <img
             src="https://cdn-images-1.medium.com/max/1800/1*HSisLuifMO6KbLfPOKtLow.jpeg"
             alt="Banner React"
-            width="800px"
+            width="100%"
           />
         </div>
       </div>

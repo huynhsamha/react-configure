@@ -490,6 +490,8 @@ Example `Post` API:
 
 ## Reveal Component on scroll: use `react-reveal`
 
+Animation to show component when user scroll to view.
+
 ### Installation
 `yarn add react-reveal` 
 
@@ -536,7 +538,17 @@ Tada
 
 
 
+## Scroll animted to target - react-scrollchor
 
+Animation to scoll to component when user click link to.
+
+### Installation
+`yarn add react-scrollchor` 
+
+
+### How to use?
+1. Use https://github.com/bySabi/react-scrollchor
+2. View demo with component `DemoReactScrollchor`.
 
 
 

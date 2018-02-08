@@ -1,0 +1,22 @@
+@import './../../../styles/variables.scss';
+
+.DemoJquery {
+	.jq-button {
+		$bg: #134bd0;
+		padding: 6px 20px;
+		background-color: $bg;
+		border-radius: 30px;
+		border: 2px $bg solid;
+		color: white;
+		transition-duration: 0.2s;
+		outline: none;
+		margin-bottom: 20px;
+		cursor: pointer;
+		&:hover {
+			background-color: white;
+			border-radius: 0px;
+			padding: 6px 50px;
+			color: $bg;
+		}
+	}
+}
