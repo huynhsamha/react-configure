@@ -44,6 +44,10 @@ Config [create-react-app](https://github.com/facebook/create-react-app) with [re
 - [Font Awesome](#font-awesome)
 	- [Add via `index.html`](#add-via-indexhtml)
 	- [Add via npm package](#add-via-npm-package)
+- [Animate.css](#animatecss)
+	- [Install and configure](#install-and-configure)
+	- [Custom duration time](#custom-duration-time)
+	- [How to use](#how-to-use)
 - [`react-router-dom` (router)](#react-router-dom-router)
 - [`react-loadable` (code-splitting)](#react-loadable-code-splitting)
 	- [Installation, Usage](#installation-usage)
@@ -352,6 +356,53 @@ You can include via file `index.html` in folder `public` via `cdn` or download a
 2. Create file `lib/font-awesome.js` and add line `import 'font-awesome/css/font-awesome.min.css';`
 3. In `lib/index.js`, import by: `import './font-awesome';`
 4. In `index.js` at root, `import './lib';` (if you don't have).
+
+
+
+
+
+
+
+
+# Animate.css
+## Install and configure
+1. `yarn add animate.css`
+2. In `lib/` create file `animate-css.js` and add `import 'animate.css';`
+3. In `index.js`, also import by line `import './animate-css';`
+
+## Custom duration time
+1. Custom duration of animation by file scss config in `style/`:
+2. Create file `_animate.scss` as source code
+3. In `index.scss`: `@import './animate.scss';`
+4. This file will create classes style to custom time duration:
+```
+.animated.duration-100
+.animated.duration-200
+...
+.animated.duration-1100
+.animated.duration-1200
+...
+.animated.duration-3000
+```
+
+## How to use
+Example:
+```html
+<!-- In/Out default -->
+<div class="animated slideInUp">ABCDEFGHIJKLMNOP</div>
+<div class="animated slideOut" >ABCDEFGHIJKLMNOP</div>
+<div class="animated fadeInDown" >ABCDEFGHIJKLMNOP</div>
+<!-- In/Out custom duration -->
+<div class="animated fadeInUp duration-500" >ABCDEFGHIJKLMNOP</div>
+<div class="animated flipIn duration-1000" >ABCDEFGHIJKLMNOP</div>
+<div class="animated slideOutDown duration-700" >ABCDEFGHIJKLMNOP</div>
+<!-- Infinite default/custom duration -->
+<div class="animated flash infinite" >ABCDEFGHIJKLMNOP</div>
+<div class="animated flash infinite duration-1200" >ABCDEFGHIJKLMNOP</div>
+```
+
+
+
 
 
 

@@ -7,10 +7,23 @@
 	width: 100%;
 	min-height: 40px;
 	line-height: 40px;
-	background-color: lighten($blue, 20%);
+	background-color: $green;
 	text-align: center;
 	font-family: $font-family-Open-Sans;
 	font-weight: 900;
 	font-size: $font-size-large;
 	color: white;
+}
+
+.wrapper-footer {
+	button {
+			font-size: $font-size-small;
+			position: fixed;
+			bottom: 0px;
+			right: 0px;
+			border-radius: 0px;
+			padding-top: 3px !important;
+			padding-bottom: 3px !important;
+			text-transform: uppercase;
+	}
 }

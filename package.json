@@ -17,6 +17,7 @@
     "deploy": "gh-pages -d build"
   },
   "dependencies": {
+    "animate.css": "^3.6.1",
     "babel-eslint": "^8.2.1",
     "body-parser": "~1.18.2",
     "bootstrap": "^4.0.0",
