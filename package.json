@@ -70,6 +70,7 @@
     "step",
     "react-loadable",
     "react-scrollchor",
-    "scroll"
+    "scroll",
+    "react-intl"
   ]
 }
