@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Fade } from 'react-reveal';
+import { Fade, Zoom } from 'react-reveal';
 
 export default class Images extends Component {
 
@@ -19,7 +19,9 @@ export default class Images extends Component {
     return (
       <div>
         {this.repeat.map(o =>
-          <Fade bottom key={o.id}><p>{o.text}</p></Fade>)
+          (o.id % 2 ?
+            <Fade bottom key={o.id}><p>{o.text}</p></Fade> :
+            <Zoom><p>{o.text}</p></Zoom>))
         }
       </div>
     );
