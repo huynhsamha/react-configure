@@ -16,7 +16,7 @@ export default class Body extends Component {
   render() {
     return (
       <div className="Body">
-        <Router basename="/">
+        <Router basename={process.env.PUBLIC_URL}>
           <div className="container-fluid">
             <div className="row">
               <div className="Body-left col-lg-3 col-sm-12">
