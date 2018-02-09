@@ -40,7 +40,7 @@ class DemoReactRouter extends Component {
               <Route exact path="/loadable-image" component={LoadableImage} />
               <Route exact path="/unloadable-text" component={Text} />
               <Route exact path="/user-list" component={UserList} />
-              <Route exact path="/:userID" component={UserProfile} />
+              <Route exact path="/user/:userID" component={UserProfile} />
               <Route render={() => <div>404 Page Not Found</div>} />
             </Switch>
           </div>

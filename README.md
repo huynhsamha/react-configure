@@ -352,8 +352,9 @@ You can include via file `index.html` in folder `public` via `cdn` or download a
 `react-router-dom` is used for route Single Page Application (SPA), not loading again page.
 
 1. In terminal: `yarn add react-router-dom`
-2. You can view implment in `components/layout/body`
-
+2. You can view implement in `components/layout/body`
+3. You also view implement in `components/pages/demo-react-router`
+4. Documents is available at [React Router Dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)
 
 
 
@@ -407,6 +408,7 @@ You can include via file `index.html` in folder `public` via `cdn` or download a
     + `import thunk from 'redux-thunk';`: middleware for createStore, support async function
     + `import allReducers from './reducers';`: reducers after combined
     + `const store = createStore(allReducers, applyMiddleware(thunk));`: createStore with combined reducer, and apply middleware thunk
+    + You don't care about other reducers, such as `Users`
 
 3. In `reducers/index.js`: combine reducers
 ```js

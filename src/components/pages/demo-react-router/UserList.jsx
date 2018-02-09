@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import * as Actions from './../../../actions';
 
-import './style.css';
-
-export default class UserList extends Component {
+class UserList extends Component {
 
   constructor(props) {
     super(props);
@@ -11,18 +12,15 @@ export default class UserList extends Component {
     document.title = 'User List';
   }
 
+  handleClickRemoveUser(user) {
+    const res = window.confirm(`Do you want to remove ${user.name}`);
+    if (res) {
+      this.props.removeUser(user.id);
+    }
+  }
+
   render() {
 
-    const userList = [];
-    for (let i = 0; i < 100; i++) {
-      userList.push({
-        id: i,
-        name: `User ${i + 1}`,
-        email: `user-${i + 1}@gmail.com`,
-        salary: i * 975 + (100 - i) * 285,
-        address: `Street ${100 - i}`
-      });
-    }
 
     return (
       <div>
@@ -39,7 +37,7 @@ export default class UserList extends Component {
             </tr>
           </thead>
           <tbody>
-            {userList.map((o, i) => (
+            {this.props.userList.map((o, i) => (
               <tr key={o.id}>
                 <th className="text-center" scope="row">{i}</th>
                 <td className="text-center">{o.id}</td>
@@ -48,14 +46,18 @@ export default class UserList extends Component {
                 <td>{o.address}</td>
                 <td className="text-right">{o.salary}</td>
                 <td className="text-center">
-                  <Link to={`/${o.id}`}>
+                  <Link to={`/user/${o.id}`}>
                     <span><i className="fa fa-edit text-primary" /></span>
                   </Link>
                 </td>
                 <td className="text-center">
-                  <Link to={`/${o.id}`}>
-                    <span><i className="fa fa-trash text-danger" /></span>
-                  </Link>
+                  <span
+                    onClick={() => { this.handleClickRemoveUser(o); }}
+                    role="button" tabIndex={0} onKeyUp={() => { }}
+                    style={{ cursor: 'pointer' }}
+                  >
+                    <i className="fa fa-trash text-danger" />
+                  </span>
                 </td>
               </tr>
             ))}
@@ -65,3 +67,24 @@ export default class UserList extends Component {
     );
   }
 }
+
+UserList.propTypes = {
+  userList: PropTypes.array,
+  removeUser: PropTypes.func.isRequired
+};
+
+UserList.defaultProps = {
+  userList: []
+};
+
+const mapStateToProps = state => ({
+  userList: state.Users
+});
+
+const mapDispatchToProps = dispatch => ({
+  removeUser: (userID) => {
+    dispatch(Actions.removeUser(userID));
+  }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserList);

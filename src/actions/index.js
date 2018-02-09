@@ -17,3 +17,14 @@ export const removeDemo2 = id => ({
   type: actionTypes.REMOVE_DEMO_2,
   id
 });
+
+export const updateUserList = userList => ({
+  type: actionTypes.UPDATE_USER_LIST,
+  userList
+});
+
+export const removeUser = id => ({
+  type: actionTypes.REMOVE_USER,
+  id
+});
+
