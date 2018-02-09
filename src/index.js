@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
+import { IntlProvider } from 'react-intl';
 
 // Libs
 import './lib';
@@ -22,7 +23,9 @@ const store = createStore(allReducers, applyMiddleware(thunk));
 ReactDOM.render(
 
   <Provider store={store}>
-    <App />
+    <IntlProvider locale="en">
+      <App />
+    </IntlProvider>
   </Provider>,
 
   document.getElementById('root')

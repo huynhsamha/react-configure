@@ -7,7 +7,9 @@ Config [create-react-app](https://github.com/facebook/create-react-app) with [re
 ----------------------
 
 
-## Table of Contents
+## Table of contents:
+- [create-react-app-config](#create-react-app-config)
+	- [Table of contents:](#table-of-contents)
 - [Start with `create-react-app`](#start-with-create-react-app)
 - [Config environment variables](#config-environment-variables)
 - [Post-Processing CSS:](#post-processing-css)
@@ -46,6 +48,10 @@ Config [create-react-app](https://github.com/facebook/create-react-app) with [re
 - [`react-loadable` (code-splitting)](#react-loadable-code-splitting)
 	- [Installation, Usage](#installation-usage)
 	- [Test Loadable Components - code-splitting](#test-loadable-components---code-splitting)
+- [`react-intl` - API to format date, number and string](#react-intl---api-to-format-date-number-and-string)
+	- [Features](#features)
+	- [Document](#document)
+	- [Usage in this tutorial](#usage-in-this-tutorial)
 - [Redux: `redux, react-redux, redux-thunk`](#redux-redux-react-redux-redux-thunk)
 	- [Installation](#installation)
 	- [Usage](#usage)
@@ -57,6 +63,9 @@ Config [create-react-app](https://github.com/facebook/create-react-app) with [re
 		- [Support](#support)
 			- [Reveal with React](#reveal-with-react)
 			- [Animated.css with React](#animatedcss-with-react)
+		- [How to use?](#how-to-use)
+	- [Scroll animted to target - react-scrollchor](#scroll-animted-to-target---react-scrollchor)
+		- [Installation](#installation)
 		- [How to use?](#how-to-use)
 - [VS Code Extensions](#vs-code-extensions)
 	- [Icons, Colors, View](#icons-colors-view)
@@ -389,6 +398,51 @@ You can include via file `index.html` in folder `public` via `cdn` or download a
 
 
 
+
+# `react-intl` - API to format date, number and string
+Internationalize React apps. This library provides React components and an API to format dates, numbers, and strings, including pluralization and handling translations.
+
+## Features
++ Display numbers with separators.
++ Display dates and times correctly.
++ Display dates relative to "now".
++ Pluralize labels in strings.
++ Support for 150+ languages.
++ Runs in the browser and Node.js.
++ Built on standards.
+
+## Document
+You can view document at here: [https://github.com/yahoo/react-intl](https://github.com/yahoo/react-intl)
+
+
+## Usage in this tutorial
+1. In `index.js`, we import and use provider for App component:
+
+```jsx
+import { IntlProvider } from 'react-intl';
+
+ReactDOM.render(
+
+  <Provider store={store}>
+    <IntlProvider locale="en">
+      <App />
+    </IntlProvider>
+  </Provider>,
+
+  document.getElementById('root')
+);
+```
+
+2. In specific component, you can import component of `react-intl` to use. You can view 1 demo about this in demo redux with format date.
+
+
+
+
+
+
+
+
+
 # Redux: `redux, react-redux, redux-thunk`
 
 ## Installation
@@ -399,7 +453,7 @@ You can include via file `index.html` in folder `public` via `cdn` or download a
     + `actions/action-types.js`: declare action name as const
     + `actions/index.js`: declare actions for redux
     + `reducers/`: declare reducers
-    + `reducers/[demo-name].js`: declare action for a specific object.
+    + `reducers/[name].js`: declare action for a specific object.
     + `reducers/index.js`: to combine reducer with redux, after that is to createStore.
 
 2. In `index.js`: 
@@ -410,20 +464,24 @@ You can include via file `index.html` in folder `public` via `cdn` or download a
     + `const store = createStore(allReducers, applyMiddleware(thunk));`: createStore with combined reducer, and apply middleware thunk
     + You don't care about other reducers, such as `Users`
 
-3. In `reducers/index.js`: combine reducers
+3. In `reducers/index.js`: combine reducers:
+	+ In this tutorial, I demo with Items and Users (users is used for other section demo).
 ```js
 import { combineReducers } from 'redux';
 
-import Demo1 from './action-demo-1';
-import Demo2 from './action-demo-2';
+import Items from './items';
+import Users from './users';
 
 const reducers = combineReducers({
-    Demo1,
-    Demo2
+  Items,
+  Users
 });
 
 export default reducers;
 ```
+
+
+
 
 
 

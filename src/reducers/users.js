@@ -15,8 +15,6 @@ const initialState = userList;
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.UPDATE_USER_LIST:
-      return [...action.userList];
     case actionTypes.REMOVE_USER:
       return state.filter(o => o.id != action.id);
     default:

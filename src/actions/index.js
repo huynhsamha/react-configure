@@ -1,30 +1,28 @@
 import actionTypes from './action-types';
 
-export const toggleDemo1 = () => ({
-  type: actionTypes.TOGGLE_DEMO_1
-});
-
-export const resetDemo1 = () => ({
-  type: actionTypes.RESET_DEMO_1
-});
-
-export const addDemo2 = item => ({
-  type: actionTypes.ADD_DEMO_2,
+export const addItem = item => ({
+  type: actionTypes.ADD_ITEM,
   item
 });
 
-export const removeDemo2 = id => ({
-  type: actionTypes.REMOVE_DEMO_2,
+export const removeItem = id => ({
+  type: actionTypes.REMOVE_ITEM,
   id
 });
 
-export const updateUserList = userList => ({
-  type: actionTypes.UPDATE_USER_LIST,
-  userList
+export const editItem = (id, newItem) => ({
+  type: actionTypes.EDIT_ITEM,
+  id,
+  newItem
+});
+
+export const moveItem = (id, isUp) => ({
+  type: actionTypes.MOVE_ITEM,
+  id,
+  isUp
 });
 
 export const removeUser = id => ({
   type: actionTypes.REMOVE_USER,
   id
 });
-

@@ -27,7 +27,7 @@ class DemoReactRouter extends Component {
   render() {
     return (
       <div>
-        <Router basename="/react-router">
+        <Router basename={`${process.env.PUBLIC_URL}/react-router`}>
           <div className="container-fluid">
             <ul>
               <li><Link to="/loadable-image">Loadable Image</Link></li>
