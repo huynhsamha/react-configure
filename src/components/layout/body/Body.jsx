@@ -9,6 +9,7 @@ import DemoReactRouter from './../../pages/demo-react-router/DemoReactRouter';
 import DemoReactReveal from './../../pages/demo-react-reveal/DemoReactReveal';
 import DemoReactScrollchor from './../../pages/demo-react-scrollchor/DemoReactScrollchor';
 import DemoRedux from './../../pages/demo-redux/DemoRedux';
+import DemoAnimateCss from './../../pages/demo-animate-css/DemoAnimateCss';
 
 import('./Body.css').then().catch(err => console.log(err));
 
@@ -29,6 +30,7 @@ export default class Body extends Component {
                   <li><Link to="/react-reveal">Demo react-reveal</Link></li>
                   <li><Link to="/react-scrollchor">Demo react-scrollchor</Link></li>
                   <li><Link to="/redux">Demo Redux</Link></li>
+                  <li><Link to="/animate-css">Demo Animate.css</Link></li>
                   <li><Link to="/link-not-found">Go to link not found</Link></li>
                 </ul>
 
@@ -45,6 +47,7 @@ export default class Body extends Component {
                   <Route exact path="/react-reveal" component={DemoReactReveal} />
                   <Route exact path="/react-scrollchor" component={DemoReactScrollchor} />
                   <Route exact path="/redux" component={DemoRedux} />
+                  <Route exact path="/animate-css" component={DemoAnimateCss} />
                   <Route render={() => <div>404 Page Not Found</div>} />
                 </Switch>
               </div>

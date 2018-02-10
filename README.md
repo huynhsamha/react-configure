@@ -48,6 +48,7 @@ Config [create-react-app](https://github.com/facebook/create-react-app) with [re
 	- [Install and configure](#install-and-configure)
 	- [Custom duration time](#custom-duration-time)
 	- [How to use](#how-to-use)
+	- [Demo](#demo)
 - [`react-router-dom` (router)](#react-router-dom-router)
 - [`react-loadable` (code-splitting)](#react-loadable-code-splitting)
 	- [Installation, Usage](#installation-usage)
@@ -402,7 +403,8 @@ Example:
 ```
 
 
-
+## Demo
+View demo at component `DemoAnimateCss`
 
 
 
