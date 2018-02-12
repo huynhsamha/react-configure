@@ -1,29 +1,18 @@
 @import './../../../styles/variables.scss';
-
 .Footer {
 	position: fixed;
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	min-height: 40px;
-	line-height: 40px;
-	background-color: $green;
+	min-height: 30px;
+	line-height: 30px;
+	background-color: $blue;
 	text-align: center;
 	font-family: $font-family-Open-Sans;
 	font-weight: 900;
-	font-size: $font-size-large;
+	font-size: $font-size-medium;
 	color: white;
-}
-
-.wrapper-footer {
-	button {
-			font-size: $font-size-small;
-			position: fixed;
-			bottom: 0px;
-			right: 0px;
-			border-radius: 0px;
-			padding-top: 3px !important;
-			padding-bottom: 3px !important;
-			text-transform: uppercase;
-	}
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	z-index: $z-index-max;
 }

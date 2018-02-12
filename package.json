@@ -23,6 +23,8 @@
     "bootstrap": "^4.0.0",
     "cookie-parser": "~1.4.3",
     "cors": "^2.8.4",
+    "crypto-random-string": "^1.0.0",
+    "datatables.net-bs4": "^1.10.16",
     "debug": "~2.6.9",
     "express": "~4.15.5",
     "font-awesome": "^4.7.0",
@@ -72,6 +74,10 @@
     "react-loadable",
     "react-scrollchor",
     "scroll",
-    "react-intl"
+    "react-intl",
+    "animate.css",
+    "animate",
+    "datatables.net",
+    "datatable"
   ]
 }

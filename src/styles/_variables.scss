@@ -31,3 +31,8 @@ $color-success: $green;
 $color-info: $blue;
 $color-warning: $orange;
 $color-dander: $red;
+
+// Z INDEX
+$z-index-base: 500;
+$z-index-min: $z-index-base - 500;
+$z-index-max: $z-index-base + 500;

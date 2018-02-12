@@ -26,3 +26,24 @@ export const removeUser = id => ({
   type: actionTypes.REMOVE_USER,
   id
 });
+
+
+export const addTodo = newTodo => ({
+  type: actionTypes.ADD_TODO,
+  newTodo
+});
+
+export const removeTodo = id => ({
+  type: actionTypes.REMOVE_TODO,
+  id
+});
+
+export const doneTodo = (id, isDone) => ({
+  type: actionTypes.DONE_TODO,
+  id, isDone
+});
+
+export const modifyTodo = (id, newTodo) => ({
+  type: actionTypes.MODIFY_TODO,
+  id, newTodo
+});
