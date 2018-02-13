@@ -1,11 +1,17 @@
+@import './../../../styles/variables.scss';
+
 .ReactTable {
 	background-color: rgb(245, 245, 245);
 	padding: 25px 5px;
 
-	.tb-header {
-		font-weight: 900;
-	}
+	.react-table {
+		font-size: $font-size-small;
 
-	.tb-cell {
+		.tb-header {
+			font-weight: 900;
+		}
+
+		.tb-cell {
+		}
 	}
 }

@@ -24,13 +24,14 @@ for (let i = 0; i < baseActions.length; i++)
     const duration = i * 5 + (baseActions.length - i) * 3;
     const dateStart = new Date(yyyy, mm, dd);
     const dateEnd = new Date(dateStart.getTime() + duration * 86400000);
+    const process = (num * 199997 + Math.round(Math.random() * 1999997)) % 101;
     todoList.push({
       id: crs(10).toUpperCase(),
       content: `${action} ${object}`,
       duration,
       dateStart,
       dateEnd,
-      done: num % 10 == 3
+      process
     });
   }
 
