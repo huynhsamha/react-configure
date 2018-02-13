@@ -32,8 +32,8 @@ export default class Body extends Component {
                   <li><Link to="/react-reveal">Demo react-reveal</Link></li>
                   <li><Link to="/react-scrollchor">Demo react-scrollchor</Link></li>
                   <li><Link to="/redux">Demo Redux</Link></li>
-                  <li><Link to="/animate-css">Demo Animate.css</Link></li>
-                  <li><Link to="/react-table">Demo Datatables.net</Link></li>
+                  <li><Link to="/animate-css">Demo animate.css</Link></li>
+                  <li><Link to="/react-table">Demo react-table</Link></li>
                   <li><Link to="/link-not-found">Go to link not found</Link></li>
                 </ul>
 
