@@ -39,3 +39,15 @@
 .fontExtraLarge {
 	font-size: $font-size-extra-large;
 }
+
+.cursorPointer {
+	cursor: pointer;
+}
+
+.cursorNotAllowed {
+	cursor: not-allowed
+}
+
+.cursorCrosshair {
+	cursor: crosshair;
+}

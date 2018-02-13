@@ -12,6 +12,13 @@
 		}
 
 		.tb-cell {
+			&.tb-buttons {
+				width: 100%;
+				height: 16px;
+				font-size: 16px;
+				span.tb-button {
+				}
+			}
 		}
 	}
 }
