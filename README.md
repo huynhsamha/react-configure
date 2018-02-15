@@ -1,15 +1,29 @@
 # create-react-app-config
 ----------------------
 
-Config [create-react-app](https://github.com/facebook/create-react-app) with [redux](https://redux.js.org/docs/basics/UsageWithReact.html), router, sass, code spliting, jQuery, bootstrap,...
+Necessary configure for [create-react-app](https://github.com/facebook/create-react-app) with [redux](https://redux.js.org/docs/basics/UsageWithReact.html), 
+react-redux, 
+redux-thunk, 
+react-router, 
+react-router-dom, 
+sass, 
+code spliting, 
+jQuery, 
+bootstrap, 
+react-loadable, 
+react-scrollchor, 
+react-intl, 
+react-select, 
+react-datepicker, 
+react-table, 
+moment, 
+...
 
 
 ----------------------
 
 
 ## Table of contents:
-- [create-react-app-config](#create-react-app-config)
-	- [Table of contents:](#table-of-contents)
 - [Start with `create-react-app`](#start-with-create-react-app)
 - [Config environment variables](#config-environment-variables)
 - [Post-Processing CSS:](#post-processing-css)
