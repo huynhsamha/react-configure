@@ -52,9 +52,10 @@ const reducer = (state = initialState, action) => {
       });
 
     case actionTypes.MODIFY_TODO:
+      console.log(action);
       return state.map((o) => {
         if (o.id != action.id) return o;
-        return action.newTodo;
+        return { ...o, ...action.newTodo };
       });
 
     default:

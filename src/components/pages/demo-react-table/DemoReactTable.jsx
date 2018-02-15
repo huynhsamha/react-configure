@@ -10,6 +10,8 @@ import 'react-table/react-table.css';
 
 import matchSorter from 'match-sorter';
 
+import ModalEditTodo from './ModalEditTodo';
+
 import './style.css';
 
 const propTypes = {
@@ -21,12 +23,20 @@ const defaultProps = {
   todos: []
 };
 
+
 class DemoReactTable extends Component {
 
   constructor(props) {
     super(props);
 
     document.title = 'Demo react-table';
+
+    this.state = {
+      modalIsOpen: false,
+      modalData: {}
+    };
+
+    this.toggleModalEdit = this.toggleModalEdit.bind(this);
 
     console.log('contructor');
 
@@ -44,6 +54,26 @@ class DemoReactTable extends Component {
 
   onClickEditTodo(rowInfo) {
     console.log(rowInfo);
+    const data = rowInfo.row;
+    this.toggleModalEdit(data);
+  }
+
+  toggleModalEdit(data) {
+    this.setState({
+      modalIsOpen: !this.state.modalIsOpen,
+      modalData: data
+    });
+  }
+
+
+  renderModal() {
+    return (
+      <ModalEditTodo
+        isOpen={this.state.modalIsOpen}
+        toggle={this.toggleModalEdit}
+        data={this.state.modalData}
+      />
+    );
   }
 
   render() {
@@ -135,7 +165,7 @@ class DemoReactTable extends Component {
         ),
         Filter: ({ filter, onChange }) => (
           <select
-            onBlur={() => {}}
+            onBlur={() => { }}
             onChange={event => onChange(event.target.value)}
             style={{ width: '100%' }}
             value={filter ? filter.value : 'all'}
@@ -199,7 +229,6 @@ class DemoReactTable extends Component {
         <ReactTable
           data={todos}
           columns={columns}
-          // showPaginationTop
           pageSizeOptions={[5, 10, 20, 25, 50, 100, 150, 200, 500]}
           defaultPageSize={10}
           filterable
@@ -224,6 +253,8 @@ class DemoReactTable extends Component {
             }
           })}
         />
+
+        {this.renderModal()}
       </div>
     );
   }
