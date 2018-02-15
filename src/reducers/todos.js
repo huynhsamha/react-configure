@@ -1,5 +1,5 @@
 import actionTypes from '../actions/action-types';
-import crs from 'crypto-random-string';
+import uniqid from 'uniqid';
 
 const baseActions = [
   'Find out', 'Learn', 'Practice', 'Review', 'Build prject', 'Guide', 'Present'
@@ -26,7 +26,7 @@ for (let i = 0; i < baseActions.length; i++)
     const dateEnd = new Date(dateStart.getTime() + duration * 86400000);
     const process = (num * 199997 + Math.round(Math.random() * 1999997)) % 101;
     todoList.push({
-      id: crs(10).toUpperCase(),
+      id: uniqid.time().toUpperCase(),
       content: `${action} ${object}`,
       duration,
       dateStart,

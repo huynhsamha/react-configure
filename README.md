@@ -72,6 +72,7 @@ Config [create-react-app](https://github.com/facebook/create-react-app) with [re
 	- [Scroll animted to target - react-scrollchor](#scroll-animted-to-target---react-scrollchor)
 		- [Installation](#installation)
 		- [How to use?](#how-to-use)
+- [Datatable with `react-table`](#datatable-with-react-table)
 - [VS Code Extensions](#vs-code-extensions)
 	- [Icons, Colors, View](#icons-colors-view)
 	- [Snippets](#snippets)
@@ -671,6 +672,23 @@ Animation to scoll to component when user click link to.
 
 
 
+# Datatable with `react-table`
+1. View demo for this guide here: [Demo]()
+2. View implementation in [`demo-react-table`]()
+3. In this guide, we use [`react-table`](https://react-table.js.org/#/story/readme) with features:
+	+ Lightweight at 11kb (and just 2kb more for styles)
+	+ Fully customizable (JSX, templates, state, styles, callbacks)
+	+ Client-side & Server-side pagination
+	+ Multi-sort
+	+ Filters
+	+ Pivoting & Aggregation
+	+ Minimal design & easily themeable
+	+ Fully controllable via optional props and callbacks
+4. In this guide, we also use `react-select` and `react-datepicker` with `moment`. You can view docs for these package here:
+	+ [react-select - Demo](http://jedwatson.github.io/react-select/)
+	+ [react-select - Docs](https://github.com/JedWatson/react-select)
+	+ [`react-datepicker` - Demo](https://reactdatepicker.com/)
+	+ [`react-datepicker` - Docs](https://github.com/Hacker0x01/react-datepicker)
 
 
 
