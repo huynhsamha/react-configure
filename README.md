@@ -284,6 +284,9 @@ window.jQuery = $;
 2. In `index.js` at root, `import './lib';` (if you don't have).
 3. In the component, to use jQuery, you should import: `import $ from 'jquery';`
 4. To use jquery function, only use from `componentDidMount()` in Lifecycle React components:
+5. [View Demo here](https://huynhsamha.github.io/create-react-app-config/jquery)
+6. [View Implementation here](https://github.com/huynhsamha/create-react-app-config/blob/master/src/components/pages/demo-jquery/DemoJquery.jsx)
+
 
 ```javascript
   componentDidMount() {
@@ -293,7 +296,7 @@ window.jQuery = $;
     });
   }
 ```
-5. View demo with component `DemoJquery`.
+
 
 ## Recommend
 Not use jQuery if it's not needed
@@ -323,8 +326,8 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 2. In `index.js` at root, `import './lib';` (if you don't have).
 3. In the component, you can use bootstrap 3, 4 as document available
 4. View demo with component `DemoBootstrap`.
-
-
+5. [View Demo here](https://huynhsamha.github.io/create-react-app-config/bootstrap)
+6. [View Implementation here](https://github.com/huynhsamha/create-react-app-config/blob/master/src/components/pages/demo-bootstrap/DemoBootstrap.jsx)
 
 
 
@@ -335,6 +338,8 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 1. In terminal: `yarn add reactstrap@next`
 2. Only import Component to use as reactstrap document
 3. View demo with component `DemoReactstrap`.
+4. [View Demo here](https://huynhsamha.github.io/create-react-app-config/reactstrap)
+5. [View Implementation here](https://github.com/huynhsamha/create-react-app-config/blob/master/src/components/pages/demo-reactstrap/DemoReactstrap.jsx)
 
 ## Recommend
 1. I think you should use `reactstrap` if you want use some component in react, with event handle.
@@ -405,7 +410,12 @@ Example:
 
 
 ## Demo
-View demo at component `DemoAnimateCss`
++ View demo at component `DemoAnimateCss`
++ [View Demo here](https://huynhsamha.github.io/create-react-app-config/animate-css)
++ [View Implementation here](https://github.com/huynhsamha/create-react-app-config/blob/master/src/components/pages/demo-animate-css/DemoAnimateCss.jsx)
+
+
+
 
 
 
@@ -418,6 +428,13 @@ View demo at component `DemoAnimateCss`
 2. You can view implement in `components/layout/body`
 3. You also view implement in `components/pages/demo-react-router`
 4. Documents is available at [React Router Dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)
+
+4. [View Demo here](https://huynhsamha.github.io/create-react-app-config/react-router)
+5. [View Implementation here](https://github.com/huynhsamha/create-react-app-config/blob/master/src/components/pages/demo-react-router/DemoReactRouter.jsx)
+
+
+
+
 
 
 
@@ -443,7 +460,8 @@ View demo at component `DemoAnimateCss`
 4. Refresh page
 5. First only `bundle.js` and some js file
 6. Click component which loadable, you see `*.chunk.js` is loaded. That is lazy loading component
-
+4. [View Demo here](https://huynhsamha.github.io/create-react-app-config/react-loadable)
+5. [View Implementation here](https://github.com/huynhsamha/create-react-app-config/blob/master/src/components/pages/demo-react-router/DemoReactRouter.jsx)
 
 
 
@@ -534,7 +552,8 @@ const reducers = combineReducers({
 export default reducers;
 ```
 
-
+4. [View Demo here](https://huynhsamha.github.io/create-react-app-config/redux)
+5. [View Implementation here](https://github.com/huynhsamha/create-react-app-config/blob/master/src/components/pages/demo-redux/DemoRedux.jsx)
 
 
 
@@ -642,7 +661,8 @@ Tada
 1. Use http://www.react-reveal.com/examples/.
 2. View demo with component `DemoReactReveal`.
 
-
+4. [View Demo here](https://huynhsamha.github.io/create-react-app-config/react-reveal)
+5. [View Implementation here](https://github.com/huynhsamha/create-react-app-config/blob/master/src/components/pages/demo-react-reveal/DemoReactReveal.jsx)
 
 
 
@@ -664,7 +684,8 @@ Animation to scoll to component when user click link to.
 1. Use https://github.com/bySabi/react-scrollchor
 2. View demo with component `DemoReactScrollchor`.
 
-
+4. [View Demo here](https://huynhsamha.github.io/create-react-app-config/react-scrollchor)
+5. [View Implementation here](https://github.com/huynhsamha/create-react-app-config/blob/master/src/components/pages/demo-react-scrollchor/DemoReactScrollchor.jsx)
 
 
 
@@ -673,8 +694,8 @@ Animation to scoll to component when user click link to.
 
 
 # Datatable with `react-table`
-1. View demo for this guide here: [Demo]()
-2. View implementation in [`demo-react-table`]()
+1. View demo for this guide here: [Demo](https://huynhsamha.github.io/create-react-app-config/react-table)
+2. View implementation in [`demo-react-table` - Implementation](https://github.com/huynhsamha/create-react-app-config/blob/master/src/components/pages/demo-react-table/DemoReactTable.jsx)
 3. In this guide, we use [`react-table`](https://react-table.js.org/#/story/readme) with features:
 	+ Lightweight at 11kb (and just 2kb more for styles)
 	+ Fully customizable (JSX, templates, state, styles, callbacks)
@@ -685,8 +706,8 @@ Animation to scoll to component when user click link to.
 	+ Minimal design & easily themeable
 	+ Fully controllable via optional props and callbacks
 4. In this guide, we also use `react-select` and `react-datepicker` with `moment`. You can view docs for these package here:
-	+ [react-select - Demo](http://jedwatson.github.io/react-select/)
-	+ [react-select - Docs](https://github.com/JedWatson/react-select)
+	+ [`react-select` - Demo](http://jedwatson.github.io/react-select/)
+	+ [`react-select` - Docs](https://github.com/JedWatson/react-select)
 	+ [`react-datepicker` - Demo](https://reactdatepicker.com/)
 	+ [`react-datepicker` - Docs](https://github.com/Hacker0x01/react-datepicker)
 
