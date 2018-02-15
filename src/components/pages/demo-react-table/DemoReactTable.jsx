@@ -38,8 +38,6 @@ class DemoReactTable extends Component {
 
     this.toggleModalEdit = this.toggleModalEdit.bind(this);
 
-    console.log('contructor');
-
     console.log(this.props.todos);
   }
 
@@ -53,7 +51,7 @@ class DemoReactTable extends Component {
   }
 
   onClickEditTodo(rowInfo) {
-    console.log(rowInfo);
+    // console.log(rowInfo);
     const data = rowInfo.row;
     this.toggleModalEdit(data);
   }

@@ -26,7 +26,7 @@ class ModalEditTodo extends Component {
     });
 
     this.durationOptions = [];
-    for (let i = 1; i < 365; i++) this.durationOptions.push({
+    for (let i = 1; i < 900; i++) this.durationOptions.push({
       value: `${i}`, label: i + (i == 1 ? ' day' : ' days')
     });
 
@@ -93,16 +93,34 @@ class ModalEditTodo extends Component {
     this.setState({ process });
   }
 
-  handleChangeDuration(duration) {
+  syncDurationAfterSetDate() {
+    console.log('syncDurationAfterSetDate');
+    const diff = this.state.dateEnd.diff(this.state.dateStart);
+    // console.log(diff);
+    const days = moment.duration(diff).asDays();
+    // console.log(days);
+    const duration = this.durationOptions.filter(o => o.value == days)[0];
+    // console.log(duration);
     this.setState({ duration });
   }
 
+  handleChangeDuration(duration) {
+    console.log('handleChangeDuration');
+    const days = duration.value;
+    const dateEnd = this.state.dateStart.clone();
+    dateEnd.add(days, 'days');
+    console.log(dateEnd);
+    this.setState({ dateEnd }, () => this.syncDurationAfterSetDate());
+  }
+
   handleChangeDateStart(dateStart) {
-    this.setState({ dateStart });
+    console.log('handleChangeDateStart');
+    this.setState({ dateStart }, () => this.syncDurationAfterSetDate());
   }
 
   handleChangeDateEnd(dateEnd) {
-    this.setState({ dateEnd });
+    console.log('handleChangeDa(teEnd');
+    this.setState({ dateEnd }, () => this.syncDurationAfterSetDate());
   }
 
   renderFormEdit() {
