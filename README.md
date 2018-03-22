@@ -21,7 +21,7 @@ moment,
 
 
 
-![vn](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Vietnam.png) [**Version Vietnamese here**](https://viblo.asia/p/reactjs-voi-create-react-app-toan-tap-RQqKLzLOl7z)
+![vn](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Vietnam.png) [**Version Vietnamese here**](https://github.com/huynhsamha/create-react-app-config/blob/master/README.VN.md)
 
 
 
