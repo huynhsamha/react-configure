@@ -1,6 +1,6 @@
 {
   "name": "react-app",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "homepage": "https://huynhsamha.github.io/create-react-app-config",
   "scripts": {
@@ -85,6 +85,7 @@
     "moment",
     "momentjs",
     "react-datepicker",
-    "datepicker"
+    "datepicker",
+    "create-react-app-configure"
   ]
 }
