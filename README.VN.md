@@ -1,11 +1,9 @@
-# create-react-app-config
-
-
-Necessary configure for [create-react-app](https://github.com/facebook/create-react-app) with [redux](https://redux.js.org/docs/basics/UsageWithReact.html), 
+Chào mọi người, đây là bài viết chia sẻ kinh nghiệm của bản thân mình khi tìm hiểu về công cụ create-react-app cho việc lập trình ReactJS trở nên dễ dàng hơn.
+Trong bài viết này, mình sẽ nói về những điều có thể cần thiết cần phải tinh chỉnh trước khi bắt đầu 1 dự án React của các bạn, cụ thể là sử dụng [create-react-app](https://github.com/facebook/create-react-app) với các thư viện [redux](https://redux.js.org/docs/basics/UsageWithReact.html), 
 react-redux, 
 redux-thunk, 
 react-router, 
-react-router-dom, 
+react-router-dom,
 sass, 
 code spliting, 
 jQuery, 
@@ -20,112 +18,109 @@ moment,
 ...
 
 
-
-![vn](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Vietnam.png) [**Version Vietnamese here**](https://viblo.asia/p/reactjs-voi-create-react-app-toan-tap-RQqKLzLOl7z)
-
+Đây là demo về 1 số phần mình làm: [https://huynhsamha.github.io/create-react-app-config/](https://huynhsamha.github.io/create-react-app-config/)
 
 
+<!-- TOC -->
 
-## Table of contents:
-- [Start with `create-react-app`](#start-with-create-react-app)
-- [Config environment variables](#config-environment-variables)
-- [Post-Processing CSS:](#post-processing-css)
+- [Bắt đầu với `create-react-app`](#bắt-đầu-với-create-react-app)
+- [Thiết lập biến môi trường (environment variables)](#thiết-lập-biến-môi-trường-environment-variables)
+- [Post-Processing CSS](#post-processing-css)
 - [CSS Preprocessor (Sass, Less etc.)](#css-preprocessor-sass-less-etc)
-- [Create Node.JS server](#create-nodejs-server)
-	- [Use `express` to initialization](#use-express-to-initialization)
-	- [Configuration](#configuration)
-	- [Install dependencies package](#install-dependencies-package)
-	- [Install package `cors`](#install-package-cors)
-	- [Start server-client](#start-server-client)
-- [Environment for react app](#environment-for-react-app)
-- [Organize `src` react app](#organize-src-react-app)
-	- [Styles](#styles)
-	- [Library and packages](#library-and-packages)
-	- [Utility service](#utility-service)
-	- [Reducers - Actions](#reducers---actions)
-	- [Components](#components)
-		- [Layout Components](#layout-components)
-		- [Common Components](#common-components)
-		- [Pages Components](#pages-components)
+- [Tạo server Node.JS](#tạo-server-nodejs)
+    - [Use `express` to initialization](#use-express-to-initialization)
+    - [Configuration](#configuration)
+    - [Install dependencies package](#install-dependencies-package)
+    - [Install package `cors`](#install-package-cors)
+    - [Start server-client](#start-server-client)
+- [Environment cho react app](#environment-cho-react-app)
+- [Cấu trúc thư mục `src` trong react app](#cấu-trúc-thư-mục-src-trong-react-app)
+    - [Styles](#styles)
+    - [Library and packages](#library-and-packages)
+    - [Utility service](#utility-service)
+    - [Reducers - Actions](#reducers---actions)
+    - [Components](#components)
+        - [Layout Components](#layout-components)
+        - [Common Components](#common-components)
+        - [Pages Components](#pages-components)
 - [jQuery](#jquery)
-	- [Installation](#installation)
-	- [How to use?](#how-to-use)
-	- [Recommend](#recommend)
+    - [Installation](#installation)
+    - [How to use?](#how-to-use)
+    - [Recommend](#recommend)
 - [Bootstrap 3, 4](#bootstrap-3-4)
-	- [Use along with jQuery](#use-along-with-jquery)
-		- [Installation](#installation)
-		- [How to use?](#how-to-use)
-	- [Use via React Component - `reactstrap`](#use-via-react-component---reactstrap)
-		- [Installation and Usage](#installation-and-usage)
-	- [Recommend](#recommend)
+    - [Sử dụng cùng với jquery](#sử-dụng-cùng-với-jquery)
+        - [Installation](#installation-1)
+        - [How to use?](#how-to-use-1)
+    - [Sử dụng thông qua React Component - `reactstrap`](#sử-dụng-thông-qua-react-component---reactstrap)
+        - [Installation and Usage](#installation-and-usage)
 - [Font Awesome](#font-awesome)
-	- [Add via `index.html`](#add-via-indexhtml)
-	- [Add via npm package](#add-via-npm-package)
+    - [Thông qua `index.html`](#thông-qua-indexhtml)
+    - [Sử dụng npm package](#sử-dụng-npm-package)
 - [Animate.css](#animatecss)
-	- [Install and configure](#install-and-configure)
-	- [Custom duration time](#custom-duration-time)
-	- [How to use](#how-to-use)
-	- [Demo](#demo)
+    - [Install and configure](#install-and-configure)
+    - [Custom duration time](#custom-duration-time)
+    - [How to use](#how-to-use)
+    - [Demo](#demo)
 - [`react-router-dom` (router)](#react-router-dom-router)
 - [`react-loadable` (code-splitting)](#react-loadable-code-splitting)
-	- [Installation, Usage](#installation-usage)
-	- [Test Loadable Components - code-splitting](#test-loadable-components---code-splitting)
-- [`react-intl` - API to format date, number and string](#react-intl---api-to-format-date-number-and-string)
-	- [Features](#features)
-	- [Document](#document)
-	- [Usage in this tutorial](#usage-in-this-tutorial)
+    - [Installation, Usage](#installation-usage)
+    - [Test Loadable Components - code-splitting](#test-loadable-components---code-splitting)
+- [`react-intl` - API cho format date, number and string](#react-intl---api-cho-format-date-number-and-string)
+    - [Features - các tính năng](#features---các-tính-năng)
+    - [Document](#document)
+    - [Usage in this tutorial](#usage-in-this-tutorial)
 - [Redux: `redux, react-redux, redux-thunk`](#redux-redux-react-redux-redux-thunk)
-	- [Installation](#installation)
-	- [Usage](#usage)
+    - [Installation](#installation-2)
+    - [Usage](#usage)
 - [Fetch Data API to server node](#fetch-data-api-to-server-node)
-	- [Create `services` to get API](#create-services-to-get-api)
+    - [Create `services` to get API](#create-services-to-get-api)
 - [UI Awesome with React Component](#ui-awesome-with-react-component)
-	- [Reveal Component on scroll: use `react-reveal`](#reveal-component-on-scroll-use-react-reveal)
-		- [Installation](#installation)
-		- [Support](#support)
-			- [Reveal with React](#reveal-with-react)
-			- [Animated.css with React](#animatedcss-with-react)
-		- [How to use?](#how-to-use)
-	- [Scroll animted to target - react-scrollchor](#scroll-animted-to-target---react-scrollchor)
-		- [Installation](#installation)
-		- [How to use?](#how-to-use)
+    - [Reveal Component on scroll: use `react-reveal`](#reveal-component-on-scroll-use-react-reveal)
+        - [Installation](#installation-3)
+        - [Support](#support)
+            - [Reveal with React](#reveal-with-react)
+            - [Animated.css with React](#animatedcss-with-react)
+        - [How to use?](#how-to-use-2)
+    - [Scroll animted to target - react-scrollchor](#scroll-animted-to-target---react-scrollchor)
+        - [Installation](#installation-4)
+        - [How to use?](#how-to-use-3)
 - [Datatable with `react-table`](#datatable-with-react-table)
 - [VS Code Extensions](#vs-code-extensions)
-	- [Icons, Colors, View](#icons-colors-view)
-	- [Snippets](#snippets)
-	- [Intellisence](#intellisence)
-	- [Lint Code, Formater](#lint-code-formater)
-	- [Edit, Preview README - Markdown files](#edit-preview-readme---markdown-files)
+    - [Icons, Colors, View](#icons-colors-view)
+    - [Snippets](#snippets)
+    - [Intellisence](#intellisence)
+    - [Lint Code, Formater](#lint-code-formater)
+    - [Edit, Preview README - Markdown files](#edit-preview-readme---markdown-files)
 - [VS Code User Settings](#vs-code-user-settings)
 
+<!-- /TOC -->
+
+
+
+# Bắt đầu với `create-react-app`
+Nếu bạn mới bắt đầu sử dụng react hoặc chưa biết đến create-react-app thì mình nghĩ bạn nên sử dụng thằng này để làm quen với react, vì nó đã làm sẵn mọi thứ giúp ta, ta chỉ cần làm theo những gì ta muốn với công cụ này.
+
+Trước tiên, bạn nên cài package `create-react-app`  mức global từ npm .
+`npm install create-react-app -g` 
+hoặc nếu bạn dùng Ubuntu hay một số hệ điều hành khác, nó yêu cầu quyền root, bạn thêm `sudo` vào trước lệnh để thực thi.
+
+1. Tạo mới project: `create-react-app react-app`
+2. `npm start` or `yarn start`: start môi trường dev. 
+3. `npm build` or `yarn build`  build production.
+
+Trong bài  này, mình sử dụng `yarn`, các bạn có thể sử dụng `npm` cũng được theo đúng cú pháp của `npm`.
 
 
 
 
+# Thiết lập biến môi trường (environment variables)
+Tạo các file lưu trữ biến môi trường, những file này theo như create-react-app nói nó sẽ nhận ra các biên được khai báo trong các file này.
 
-
-
-# Start with `create-react-app`
-In this step, you should have `create-react-app` is installed global.
-
-1. Create new app: `create-react-app react-app`
-2. use `npm start` or `yarn start` to start development
-3. use `npm build` or `yarn build` to build production
-
-In this tutorial, I will use `yarn`, you can also use `npm`.
-
-
-
-
-# Config environment variables
-Create environment files, `create-react-app` will use them.
-
-1. In terminal at root: `touch .env .env.development .env.production`
+1. Trong terminal tại root của project: `touch .env .env.development .env.production`
 2. In `.env.development`: `REACT_APP_ENV=development`
 3. In `.env.production` : `REACT_APP_ENV=production`
 
-You can also set new environment variable.
-**Note:** only variable with prefix `REACT_APP_` can use in `create-react-app`
+**Note:** chỉ mầy biến với prefix là  `REACT_APP_` thì thằng `create-react-app` mới hiểu và đọc được, còn sử dụng nó thì mình nói sau.
 
 
 
@@ -133,8 +128,9 @@ You can also set new environment variable.
 
 
 
-# Post-Processing CSS:
-As `create-react-app` said:
+# Post-Processing CSS
+Khi viết CSS, ta thường quan tâm đến các thuộc tính hỗ trợ trên nhiều trình duyệt . Tuy nhiên `create-react-app` sẽ lo cho ta việc này, do đó ta có thể yên tâm khi viết CSS 1 cách đơn giản.
+Đây là lời trích từ document của react:
 
 > This project setup minifies your CSS and adds vendor prefixes to it automatically through Autoprefixer so you don’t need to worry about it.
 
@@ -145,6 +141,8 @@ As `create-react-app` said:
 
 
 # CSS Preprocessor (Sass, Less etc.)
+Nếu bạn nào đã dùng qua SASS , LESS, SCSS thì cũng biết sự lợi hại và tiện ích của những thằng này. Do đó nếu có thể tích hợp vào React thì khá thú vị.
+`create-react-app` cũng hỗ trợ ta việc này, bằng cách thực hiện các bước sau:
 
 1. In terminal: `yarn add node-sass-chokidar npm-run-all`
 2. In file `package.json`:
@@ -169,6 +167,9 @@ As `create-react-app` said:
 src/**/*.css
 ```
 
+Lúc này khi ta start de lên, khi có thay đổi gì ở file sass, thì nó sẽ tự build lại các file css cho ta và browser tự động được refresh. 
+
+Còn trong file .gitignore, ta thêm các file tự động sinh ra do sass để tránh gây conflict không cần thiết khi nhiều người commit.
 
 
 
@@ -177,8 +178,9 @@ src/**/*.css
 
 
 
-# Create Node.JS server
 
+# Tạo server Node.JS
+Nhiều lúc, ta cũng muốn sử dụng node cho thằng react :)
 ## Use `express` to initialization
 
 ```bash
@@ -204,7 +206,9 @@ express
 
 ## Install package `cors`
 
-For development, use package `cors` to cross `localhost:3000` (client-side, is react app) to `localhost:4200` (server-side, is node express)
+Ta install package `cors` để cross từ port 3000 localhost tới port 4200 localhost.
++ `localhost:3000` (client-side, là port thằng react)
++ `localhost:4200` (server-side, là port của node express)
 
 `yarn add cors`
 
@@ -222,8 +226,10 @@ For development, use package `cors` to cross `localhost:3000` (client-side, is r
 
 
 
-# Environment for react app
-In development, because we use node server at port 4200, but client side is port 3000, so we should check out environment variable `REACT_APP_ENV` (which created in above steps) to fetch data from server.
+# Environment cho react app
+Lúc ta phát triển (dev), ta sử dụng node ở port 4200, còn react ở port 3000, do đó để react có thể gọi request đến port 4200, ngoài sử dụng `cors` như ở trên, ta cũng cần sử dụng biên môi trường (đã thiết lập ở bước trên) để lấy dữ liệu từ server node. Ngoài ra ta cũng có thể dùng proxy (tham khảo thêm google cách này).
+
+Như đã nói ở trên, chỉ các biến  `REACT_APP_` được khai báo trong các file tương ứng thì react mới biết được. Cụ thể ta dùng biến  `REACT_APP_ENV` để phân biệt môi trường của server, nếu là production thì không cần phinh phức.
 
 1. Create environment files:
 In your terminal:
@@ -240,40 +246,40 @@ touch env.development.js env.production.js index.js
 
 
 
-# Organize `src` react app
+# Cấu trúc thư mục `src` trong react app
 
 ## Styles
-Create `styles` in `src/` to contain variables, mixins, classes, common styles, or theme, etc. for your app:
-	+ `_variables.scss`: declare variables for style.
-	+ `_mixins.scss`: declare mixins for style
-	+ `_classes.scss`: declare some util classes for style
-	+ `index.scss`: import `_` files to this file, you should move `index.scss` (in root) to this folder, and in `index.js`, you only import `./styles/index.css`
-	+ You also override some theme (such as AdminLTE, Bootstrap, Material, Angular, Datatables, Charts, ...) with files `_` and import to `index.scss`
+Tạo thư mục `styles` trong `src/`  để chứa các biến variables, mixins, classes, common styles, or theme, etc. cho app react:
+	+ `_variables.scss`: khai báo các variables .
+	+ `_mixins.scss`: khai báo các  mixins (dùng sass hoặc less)
+	+ `_classes.scss`: khai báo 1 số class hữu ích.
+	+ `index.scss`: import các file `_` vào file này,  để file  `index.scss` ở ngoài thư thư mục tương ứng, còn trong file `index.js`, ta import style này vào `./styles/index.css`
+	+ Nếu app của bạn sử dụng theme (như AdminLTE, Bootstrap, Material, Angular, Datatables, Charts, ...), ta ghi đề những style cần với file prefix là `_`  và import vô `index.scss`
 
 ## Library and packages
-Create `lib` in `src` to contain some library or package you use in this app, or config something with these packages (such as jQuery, Bootstrap, Font-Awesome, Ionicons, Material, ...):
-	+ You also create `index.js` in `lib` to import these files in folder.
-	+ In `index.js` in root, you only import by one line: `import './lib';`
+Trong thư mục `src`, ta tạo thư mục `lib` để chứa các thư viện và package ta dùng trong app, chẳng hạn như jQuery, Bootstrap, Font-Awesome, Ionicons, Material, ...
++ Tạo file `index.js` trong `lib` để import các file trong thư mục này
++ Trong file `index.js` ngoài thư mục app của ta, ta import thư mục `lib` vừa tạo chỉ bằng dòng  `import './lib';`
+
 
 ## Utility service
-Create `services` to contain your services for app. Guides is below sections
+Ta cũng tạo thư mục `services` để chứa các tiện ích của app. Việc triển khai thư mục này ta sẽ bàn sau.
 
 ## Reducers - Actions
-Create `actions`, `reducers` to do with `redux`. Guides is below sections
+Nếu ta sử dụng `redux`, ta cũng cần tạo 2 thư mục `actions` và `reducers`. Cụ thể triển khai ta sẽ bàn sau.
 
 ## Components
-Create `components` to contain components in app:
-Guides for these components is below sections
+Ta tạo `components` để chứa các components của app, trong đó ta chia ra thành:
 
 ### Layout Components
-- Create `layout` in `components` to contain layout of app (flow).
-- Your `App.js`, `App.scss` also in here, which import `Header`, `Footer`, `Sidebar`, `Menu`, `Body`,... for Navigations and Router
+Tạo thư mục `layout` để chứa luồng thực thi của app. Trong `layout` ta tạo hai file `App.js` và `App.scss`, ngoài ra còn chứa các thư mục  `Header`, `Footer`, `Sidebar`, `Menu`, `Body` tương ứng cho việc điều hướng app.
+
 
 ### Common Components
-Create `common` in `components` to contain some components which is used a lot of times. Such as `Loading`, `Modal`, `Alert`, `Notification`, `Box`, ...
+Ta tạo `common` để chứa các components dùng chung được sử dụng nhiều lần như `Loading`, `Modal`, `Alert`, `Notification`, `Box`, ...
 
 ### Pages Components
-Create `pages` in `components` to contain some pages in app, which is route in component `Body`, such as `Home`, `Dashboard`, `Profile`, `Form`, `Terms of Service`, `Support`, `Page not found`, `Error page`,...
+Tạo `pages` để chứa các trang của 1 single page app, như  `Home`, `Dashboard`, `Profile`, `Form`, `Terms of Service`, `Support`, `Page not found`, `Error page`,..
 
 
 
@@ -285,8 +291,8 @@ Create `pages` in `components` to contain some pages in app, which is route in c
 
 ## Installation
 1. In terminal: `yarn add jquery`
-2. In terminal: `touch src/lib/jquery.js`
-3. Edit created file by following lines:
+2. In terminal: `touch src/lib/jquery.js`: tạo file jquery config
+3. COnfig file này như sau:
 
 ```js
 import $ from 'jquery';
@@ -298,9 +304,9 @@ window.jQuery = $;
 
 ## How to use?
 1. In `lib/index.js`, import by: `import './jquery';`
-2. In `index.js` at root, `import './lib';` (if you don't have).
-3. In the component, to use jQuery, you should import: `import $ from 'jquery';`
-4. To use jquery function, only use from `componentDidMount()` in Lifecycle React components:
+2. In `index.js` at ngoài app,  `import './lib';` (nếu như bạn chưa import).
+3. Trong mỗi component, để sử dungj jquery mà react không báo lỗi, ta cần import: `import $ from 'jquery';`
+4. jquery chỉ sử dụng kể từ `componentDidMount()` trong vòng đời của 1 component react:
 5. [View Demo here](https://huynhsamha.github.io/create-react-app-config/jquery)
 6. [View Implementation here](https://github.com/huynhsamha/create-react-app-config/blob/master/src/components/pages/demo-jquery/DemoJquery.jsx)
 
@@ -316,7 +322,7 @@ window.jQuery = $;
 
 
 ## Recommend
-Not use jQuery if it's not needed
+Chỉ nên dùng jquery khi thực sự cần thiết. vì react đã hỗ trợ khá đủ.
 
 
 
@@ -326,12 +332,12 @@ Not use jQuery if it's not needed
 # Bootstrap 3, 4
 
 
-## Use along with jQuery
+## Sử dụng cùng với jquery
 ### Installation
-1. In terminal: `yarn add bootstrap` (add @version you choose)
-2. In terminal: `mkdir src/lib` (if you have `lib`, skip this step)
+1. In terminal: `yarn add bootstrap` (thêm @version cho version bạn sử dụng)
+2. In terminal: `mkdir src/lib` (nếu đã tạo thì bỏ qua)
 3. In terminal: `touch src/lib/bootstrap.js`
-4. Edit created file as lines (In this tutorial, I use bootstrap 4):
+4. Cấu hình file này như sau (mình đang dùng bootstrap 4):
 
 ```javascript
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -341,7 +347,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 ### How to use?
 1. In `lib/index.js`, import by: `import './bootstrap';`
 2. In `index.js` at root, `import './lib';` (if you don't have).
-3. In the component, you can use bootstrap 3, 4 as document available
+3. Trong component, ta có thể sử dụng bootstrap 3, 4 như document của bootstrap.
 4. View demo with component `DemoBootstrap`.
 5. [View Demo here](https://huynhsamha.github.io/create-react-app-config/bootstrap)
 6. [View Implementation here](https://github.com/huynhsamha/create-react-app-config/blob/master/src/components/pages/demo-bootstrap/DemoBootstrap.jsx)
@@ -349,7 +355,11 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 
 
-## Use via React Component - `reactstrap`
+## Sử dụng thông qua React Component - `reactstrap`
+`reactstrap` là một package react cho bootstrap, tương đối ổn so với bootstrap nhưng không phải là hoàn thiện. 
+Bạn có thể google package này để xem qua doc của nó.
+
+Cũng có nhiều framework khác cho react, xây dụng sẵn các component cần thiết cho react, bạn có thể google các framewro hoặc package tương ứng.
 
 ### Installation and Usage
 1. In terminal: `yarn add reactstrap@next`
@@ -358,9 +368,6 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 4. [View Demo here](https://huynhsamha.github.io/create-react-app-config/reactstrap)
 5. [View Implementation here](https://github.com/huynhsamha/create-react-app-config/blob/master/src/components/pages/demo-reactstrap/DemoReactstrap.jsx)
 
-## Recommend
-1. I think you should use `reactstrap` if you want use some component in react, with event handle.
-2. If you need some style in bootstrap, you can use directly, and don't need use `jQuery`
 
 
 
@@ -369,12 +376,10 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 
 # Font Awesome
-## Add via `index.html`
+## Thông qua `index.html`
+Ta có thể include trực tiếp thông qua `index/html` bằng cdn, hoặc download rồi include vào.
 
-You can include via file `index.html` in folder `public` via `cdn` or download and `link stylesheet`
-
-
-## Add via npm package
+## Sử dụng npm package
 
 1. In terminal: `yarn add font-awesome`
 2. Create file `lib/font-awesome.js` and add line `import 'font-awesome/css/font-awesome.min.css';`
@@ -391,14 +396,14 @@ You can include via file `index.html` in folder `public` via `cdn` or download a
 # Animate.css
 ## Install and configure
 1. `yarn add animate.css`
-2. In `lib/` create file `animate-css.js` and add `import 'animate.css';`
-3. In `index.js`, also import by line `import './animate-css';`
+2. In `lib/` tạo `animate-css.js` và thêm `import 'animate.css';`
+3. In `index.js`, import bằng `import './animate-css';`
 
 ## Custom duration time
-1. Custom duration of animation by file scss config in `style/`:
-2. Create file `_animate.scss` as source code
+1. Tùy chỉnh thời gian animation bằng scss config trong  `style/`:
+2. Tạo file  `_animate.scss` như source code
 3. In `index.scss`: `@import './animate.scss';`
-4. This file will create classes style to custom time duration:
+4. File này sẽ tạo ra các class sau:
 ```
 .animated.duration-100
 .animated.duration-200
@@ -439,11 +444,11 @@ Example:
 
 
 # `react-router-dom` (router)
-`react-router-dom` is used for route Single Page Application (SPA), not loading again page.
+`react-router-dom` được sử dụng cho 1  Single Page Application (SPA).
 
 1. In terminal: `yarn add react-router-dom`
-2. You can view implement in `components/layout/body`
-3. You also view implement in `components/pages/demo-react-router`
+2. Bạn xem implement trong `components/layout/body`
+3. Cũng có thể xem ở `components/pages/demo-react-router`
 4. Documents is available at [React Router Dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)
 
 4. [View Demo here](https://huynhsamha.github.io/create-react-app-config/react-router)
@@ -456,27 +461,28 @@ Example:
 
 
 # `react-loadable` (code-splitting)
+`code-splitting` là một kỹ thuật tăng tốc độ của single page app. Nó sẽ lazy loading, tức chờ cho điến khi người dùng click vào component đó nó mới thực sự load component đó lên. Điều này giúp ứng dụng của ta load nhanh ở lần chạy đầu tiên khi người dùng chưa cần vào các component này.
 
+create-react-app cũng hỗ trợ ta trong việc code-splitting, do đó ta không nên bỏ qua kỹ thuật này,
 ## Installation, Usage
 
-`react-loadable` is useful for code-splitting:
-+ Lazy load components until it's called by user, it speed up your Single Page App (SPA).
-+ `create-react-app` will bundle new script file, when it's called, it will import this file to app.
+`react-loadable` hỗ trợ code-splitting:
++ `create-react-app` sẽ bundle script file mới, khi được gọi, nó mới load file này.
 
 1. In terminal: `yarn add react-loadable react-router-dom`
-2. Create Loading component (view components/common/loading/)
-3. When use Loadable with loading component, it will add props to this component, such as:
+2. Tạo 1 Loading component (view components/common/loading/)
+3. Khi sử dụng Loadable với loading component, các thuộc tính cần quan tâm cho component này:
     `{ isLoading: true, pastDelay: false, timedOut: false, error: null }`
 4. View `components/page/demo-loadable-component` to sample implement.
 5. Component `DemoLoadableComponent` (is not loadable) and `LoadableDemoComponent` (is loadable)
 
 ## Test Loadable Components - code-splitting
-1. Inspect element in browser
-2. Choose tab network
+1. Inspect element trong trình duyệt
+2. Chọn tab network
 3. Click filter JS
 4. Refresh page
-5. First only `bundle.js` and some js file
-6. Click component which loadable, you see `*.chunk.js` is loaded. That is lazy loading component
+5. lúc đầu chỉ thấy file `bundle.js` và 1 số file js khác.
+6. Click component hỗ trợ loadable, ta sẽ thấy `*.chunk.js` is loaded. Đây là lazy loading component
 4. [View Demo here](https://huynhsamha.github.io/create-react-app-config/react-loadable)
 5. [View Implementation here](https://github.com/huynhsamha/create-react-app-config/blob/master/src/components/pages/demo-react-router/DemoReactRouter.jsx)
 
@@ -488,10 +494,10 @@ Example:
 
 
 
-# `react-intl` - API to format date, number and string
-Internationalize React apps. This library provides React components and an API to format dates, numbers, and strings, including pluralization and handling translations.
+# `react-intl` - API cho format date, number and string
+Internationalize React apps. Thư viện này cung cấp các React components and API để format dates, numbers, and strings, bao gồm pluralization (số nhiều) và handling translations (chuyến đổi).
 
-## Features
+## Features - các tính năng
 + Display numbers with separators.
 + Display dates and times correctly.
 + Display dates relative to "now".
@@ -505,7 +511,7 @@ You can view document at here: [https://github.com/yahoo/react-intl](https://git
 
 
 ## Usage in this tutorial
-1. In `index.js`, we import and use provider for App component:
+1. In `index.js`, ta import và dùng provider cho App component:
 
 ```jsx
 import { IntlProvider } from 'react-intl';
@@ -522,7 +528,7 @@ ReactDOM.render(
 );
 ```
 
-2. In specific component, you can import component of `react-intl` to use. You can view 1 demo about this in demo redux with format date.
+2. Trong tứng component, ta import component of `react-intl` để sử dụng. Bạn có thể xem demo sử dụng ở demo phần redux.
 
 
 
@@ -533,25 +539,25 @@ ReactDOM.render(
 
 
 # Redux: `redux, react-redux, redux-thunk`
-
+Redux là 1 kỹ thuật ta không thể bỏ qua khi làm việc với react.
 ## Installation
 `yarn add redux react-redux redux-thunk`
 
 ## Usage
-1. In `src`, create dir and files:
-    + `actions/action-types.js`: declare action name as const
-    + `actions/index.js`: declare actions for redux
-    + `reducers/`: declare reducers
-    + `reducers/[name].js`: declare action for a specific object.
-    + `reducers/index.js`: to combine reducer with redux, after that is to createStore.
+1. In `src`, tạo:
+    + `actions/action-types.js`: định nghĩa tên action
+    + `actions/index.js`: định nghĩa các action
+    + `reducers/`: khai báo các reducer
+    + `reducers/[name].js`: định nghĩa các action cụ thể.
+    + `reducers/index.js`: combine các reducer của redux, sau đó sẽ được createStore.
 
 2. In `index.js`: 
-    + `import { Provider } from 'react-redux';`: use Provider to store redux
-    + `import { createStore, applyMiddleware } from 'redux';`: use createStore and middleware `thunk` with createStore
-    + `import thunk from 'redux-thunk';`: middleware for createStore, support async function
-    + `import allReducers from './reducers';`: reducers after combined
-    + `const store = createStore(allReducers, applyMiddleware(thunk));`: createStore with combined reducer, and apply middleware thunk
-    + You don't care about other reducers, such as `Users`
+    + `import { Provider } from 'react-redux';`: dùng Provider để store redux
+    + `import { createStore, applyMiddleware } from 'redux';`: dùng createStore và middleware `thunk` cho createStore
+    + `import thunk from 'redux-thunk';`: middleware cho createStore, support async function
+    + `import allReducers from './reducers';`: reducers sau khi combined
+    + `const store = createStore(allReducers, applyMiddleware(thunk));`: createStore với combined reducer, và apply middleware thunk
+    + Hiện tại bạn không cần quan tâm reducers `Users`,  ta sẽ sử dụng cái này sau.
 
 3. In `reducers/index.js`: combine reducers:
 	+ In this tutorial, I demo with Items and Users (users is used for other section demo).
@@ -640,7 +646,7 @@ Example `Post` API:
 
 ## Reveal Component on scroll: use `react-reveal`
 
-Animation to show component when user scroll to view.
+Tạo animation khi người dụng scroll tới element. Khá hữu ích.
 
 ### Installation
 `yarn add react-reveal` 
@@ -691,7 +697,7 @@ Tada
 
 ## Scroll animted to target - react-scrollchor
 
-Animation to scoll to component when user click link to.
+Tạo animation khi người dùng click và chuyên tới 1 element nào đó.
 
 ### Installation
 `yarn add react-scrollchor` 
@@ -711,9 +717,9 @@ Animation to scoll to component when user click link to.
 
 
 # Datatable with `react-table`
-1. View demo for this guide here: [Demo](https://huynhsamha.github.io/create-react-app-config/react-table)
-2. View implementation in [`demo-react-table` - Implementation](https://github.com/huynhsamha/create-react-app-config/blob/master/src/components/pages/demo-react-table/DemoReactTable.jsx)
-3. In this guide, we use [`react-table`](https://react-table.js.org/#/story/readme) with features:
+1. Xem demo: [Demo](https://huynhsamha.github.io/create-react-app-config/react-table)
+2. Xem implementation trong  [`demo-react-table` - Implementation](https://github.com/huynhsamha/create-react-app-config/blob/master/src/components/pages/demo-react-table/DemoReactTable.jsx)
+3. Ta dùng [`react-table`](https://react-table.js.org/#/story/readme) with features:
 	+ Lightweight at 11kb (and just 2kb more for styles)
 	+ Fully customizable (JSX, templates, state, styles, callbacks)
 	+ Client-side & Server-side pagination
@@ -722,7 +728,7 @@ Animation to scoll to component when user click link to.
 	+ Pivoting & Aggregation
 	+ Minimal design & easily themeable
 	+ Fully controllable via optional props and callbacks
-4. In this guide, we also use `react-select` and `react-datepicker` with `moment`. You can view docs for these package here:
+4. Mình cũng dùng thêm `react-select` và `react-datepicker` với `moment`. You can view docs for these package here:
 	+ [`react-select` - Demo](http://jedwatson.github.io/react-select/)
 	+ [`react-select` - Docs](https://github.com/JedWatson/react-select)
 	+ [`react-datepicker` - Demo](https://reactdatepicker.com/)
@@ -738,7 +744,9 @@ Animation to scoll to component when user click link to.
 
 
 # VS Code Extensions
-I think following extensions is helpful for development:
+Làm việc với react thì không thể thiếu các extension cần thiết nếu bạn đang sử dụng visual studio code (VS Code)
+
+Các bạn chỉ đơn giản install extension và config nếu cần thiết.
 
 ## Icons, Colors, View
 - [vscode-icons](https://marketplace.visualstudio.com/items?itemName=robertohuertasm.vscode-icons)
@@ -809,8 +817,7 @@ I think following extensions is helpful for development:
 
 
 # VS Code User Settings
-
-I think you also setting your VSCode by following steps:
+Cũng nên setting một số config cho VS Code, tạo nên coding style chuẩn:
 
 1. Enter `Ctrl + Shift P`
 2. Search `user settings`
