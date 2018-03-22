@@ -1,5 +1,5 @@
-# create-react-app-config
-----------------------
+# create-react-app-configure
+
 
 Necessary configure for [create-react-app](https://github.com/facebook/create-react-app) with [redux](https://redux.js.org/docs/basics/UsageWithReact.html), 
 react-redux, 
@@ -20,7 +20,7 @@ moment,
 ...
 
 
-----------------------
+
 
 
 ## Table of contents:
