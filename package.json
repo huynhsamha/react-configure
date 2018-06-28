@@ -2,7 +2,7 @@
   "name": "react-app",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://huynhsamha.github.io/create-react-app-config",
+  "homepage": "https://huynhsamha.github.io/react-configure",
   "scripts": {
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm-run-all build-css build-js",
@@ -87,6 +87,7 @@
     "momentjs",
     "react-datepicker",
     "datepicker",
-    "create-react-app-configure"
+    "create-react-app-configure",
+    "react-configure"
   ]
 }

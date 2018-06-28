@@ -20,7 +20,7 @@ moment,
 ...
 
 
-Đây là demo về 1 số phần mình làm: [https://huynhsamha.github.io/create-react-app-config/](https://huynhsamha.github.io/create-react-app-config/)
+Đây là demo về 1 số phần mình làm: [https://huynhsamha.github.io/react-configure/](https://huynhsamha.github.io/react-configure/)
 
 
 <!-- TOC -->
@@ -309,8 +309,8 @@ window.jQuery = $;
 2. In `index.js` at ngoài app,  `import './lib';` (nếu như bạn chưa import).
 3. Trong mỗi component, để sử dungj jquery mà react không báo lỗi, ta cần import: `import $ from 'jquery';`
 4. jquery chỉ sử dụng kể từ `componentDidMount()` trong vòng đời của 1 component react:
-5. [View Demo here](https://huynhsamha.github.io/create-react-app-config/jquery)
-6. [View Implementation here](https://github.com/huynhsamha/create-react-app-config/blob/master/src/components/pages/demo-jquery/DemoJquery.jsx)
+5. [View Demo here](https://huynhsamha.github.io/react-configure/jquery)
+6. [View Implementation here](https://github.com/huynhsamha/react-configure/blob/master/src/components/pages/demo-jquery/DemoJquery.jsx)
 
 
 ```javascript
@@ -351,8 +351,8 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 2. In `index.js` at root, `import './lib';` (if you don't have).
 3. Trong component, ta có thể sử dụng bootstrap 3, 4 như document của bootstrap.
 4. View demo with component `DemoBootstrap`.
-5. [View Demo here](https://huynhsamha.github.io/create-react-app-config/bootstrap)
-6. [View Implementation here](https://github.com/huynhsamha/create-react-app-config/blob/master/src/components/pages/demo-bootstrap/DemoBootstrap.jsx)
+5. [View Demo here](https://huynhsamha.github.io/react-configure/bootstrap)
+6. [View Implementation here](https://github.com/huynhsamha/react-configure/blob/master/src/components/pages/demo-bootstrap/DemoBootstrap.jsx)
 
 
 
@@ -367,8 +367,8 @@ Cũng có nhiều framework khác cho react, xây dụng sẵn các component c�
 1. In terminal: `yarn add reactstrap@next`
 2. Only import Component to use as reactstrap document
 3. View demo with component `DemoReactstrap`.
-4. [View Demo here](https://huynhsamha.github.io/create-react-app-config/reactstrap)
-5. [View Implementation here](https://github.com/huynhsamha/create-react-app-config/blob/master/src/components/pages/demo-reactstrap/DemoReactstrap.jsx)
+4. [View Demo here](https://huynhsamha.github.io/react-configure/reactstrap)
+5. [View Implementation here](https://github.com/huynhsamha/react-configure/blob/master/src/components/pages/demo-reactstrap/DemoReactstrap.jsx)
 
 
 
@@ -435,8 +435,8 @@ Example:
 
 ## Demo
 + View demo at component `DemoAnimateCss`
-+ [View Demo here](https://huynhsamha.github.io/create-react-app-config/animate-css)
-+ [View Implementation here](https://github.com/huynhsamha/create-react-app-config/blob/master/src/components/pages/demo-animate-css/DemoAnimateCss.jsx)
++ [View Demo here](https://huynhsamha.github.io/react-configure/animate-css)
++ [View Implementation here](https://github.com/huynhsamha/react-configure/blob/master/src/components/pages/demo-animate-css/DemoAnimateCss.jsx)
 
 
 
@@ -453,8 +453,8 @@ Example:
 3. Cũng có thể xem ở `components/pages/demo-react-router`
 4. Documents is available at [React Router Dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)
 
-4. [View Demo here](https://huynhsamha.github.io/create-react-app-config/react-router)
-5. [View Implementation here](https://github.com/huynhsamha/create-react-app-config/blob/master/src/components/pages/demo-react-router/DemoReactRouter.jsx)
+4. [View Demo here](https://huynhsamha.github.io/react-configure/react-router)
+5. [View Implementation here](https://github.com/huynhsamha/react-configure/blob/master/src/components/pages/demo-react-router/DemoReactRouter.jsx)
 
 
 
@@ -485,8 +485,8 @@ create-react-app cũng hỗ trợ ta trong việc code-splitting, do đó ta kh�
 4. Refresh page
 5. lúc đầu chỉ thấy file `bundle.js` và 1 số file js khác.
 6. Click component hỗ trợ loadable, ta sẽ thấy `*.chunk.js` is loaded. Đây là lazy loading component
-4. [View Demo here](https://huynhsamha.github.io/create-react-app-config/react-loadable)
-5. [View Implementation here](https://github.com/huynhsamha/create-react-app-config/blob/master/src/components/pages/demo-react-router/DemoReactRouter.jsx)
+4. [View Demo here](https://huynhsamha.github.io/react-configure/react-loadable)
+5. [View Implementation here](https://github.com/huynhsamha/react-configure/blob/master/src/components/pages/demo-react-router/DemoReactRouter.jsx)
 
 
 
@@ -577,8 +577,8 @@ const reducers = combineReducers({
 export default reducers;
 ```
 
-4. [View Demo here](https://huynhsamha.github.io/create-react-app-config/redux)
-5. [View Implementation here](https://github.com/huynhsamha/create-react-app-config/blob/master/src/components/pages/demo-redux/DemoRedux.jsx)
+4. [View Demo here](https://huynhsamha.github.io/react-configure/redux)
+5. [View Implementation here](https://github.com/huynhsamha/react-configure/blob/master/src/components/pages/demo-redux/DemoRedux.jsx)
 
 
 
@@ -686,8 +686,8 @@ Tada
 1. Use http://www.react-reveal.com/examples/.
 2. View demo with component `DemoReactReveal`.
 
-4. [View Demo here](https://huynhsamha.github.io/create-react-app-config/react-reveal)
-5. [View Implementation here](https://github.com/huynhsamha/create-react-app-config/blob/master/src/components/pages/demo-react-reveal/DemoReactReveal.jsx)
+4. [View Demo here](https://huynhsamha.github.io/react-configure/react-reveal)
+5. [View Implementation here](https://github.com/huynhsamha/react-configure/blob/master/src/components/pages/demo-react-reveal/DemoReactReveal.jsx)
 
 
 
@@ -709,8 +709,8 @@ Tạo animation khi người dùng click và chuyên tới 1 element nào đó.
 1. Use https://github.com/bySabi/react-scrollchor
 2. View demo with component `DemoReactScrollchor`.
 
-4. [View Demo here](https://huynhsamha.github.io/create-react-app-config/react-scrollchor)
-5. [View Implementation here](https://github.com/huynhsamha/create-react-app-config/blob/master/src/components/pages/demo-react-scrollchor/DemoReactScrollchor.jsx)
+4. [View Demo here](https://huynhsamha.github.io/react-configure/react-scrollchor)
+5. [View Implementation here](https://github.com/huynhsamha/react-configure/blob/master/src/components/pages/demo-react-scrollchor/DemoReactScrollchor.jsx)
 
 
 
@@ -719,8 +719,8 @@ Tạo animation khi người dùng click và chuyên tới 1 element nào đó.
 
 
 # Datatable with `react-table`
-1. Xem demo: [Demo](https://huynhsamha.github.io/create-react-app-config/react-table)
-2. Xem implementation trong  [`demo-react-table` - Implementation](https://github.com/huynhsamha/create-react-app-config/blob/master/src/components/pages/demo-react-table/DemoReactTable.jsx)
+1. Xem demo: [Demo](https://huynhsamha.github.io/react-configure/react-table)
+2. Xem implementation trong  [`demo-react-table` - Implementation](https://github.com/huynhsamha/react-configure/blob/master/src/components/pages/demo-react-table/DemoReactTable.jsx)
 3. Ta dùng [`react-table`](https://react-table.js.org/#/story/readme) with features:
 	+ Lightweight at 11kb (and just 2kb more for styles)
 	+ Fully customizable (JSX, templates, state, styles, callbacks)
