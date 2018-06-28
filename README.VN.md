@@ -1,3 +1,5 @@
+# react-configure
+
 Chào mọi người, đây là bài viết chia sẻ kinh nghiệm của bản thân mình khi tìm hiểu về công cụ create-react-app cho việc lập trình ReactJS trở nên dễ dàng hơn.
 Trong bài viết này, mình sẽ nói về những điều có thể cần thiết cần phải tinh chỉnh trước khi bắt đầu 1 dự án React của các bạn, cụ thể là sử dụng [create-react-app](https://github.com/facebook/create-react-app) với các thư viện [redux](https://redux.js.org/docs/basics/UsageWithReact.html), 
 react-redux, 

@@ -1,4 +1,4 @@
-# create-react-app-config
+# react-configure
 
 
 Necessary configure for [create-react-app](https://github.com/facebook/create-react-app) with [redux](https://redux.js.org/docs/basics/UsageWithReact.html), 
@@ -178,6 +178,7 @@ src/**/*.css
 
 
 # Create Node.JS server
+Optional if you need a node.js server
 
 ## Use `express` to initialization
 
