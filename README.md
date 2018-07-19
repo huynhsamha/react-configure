@@ -21,7 +21,7 @@ moment,
 
 
 
-![vn](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Vietnam.png) [**Version Vietnamese here**](https://github.com/huynhsamha/react-configure/blob/master/README.VN.md)
+![vn](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Vietnam.png) [**Vietnamese version here**](https://github.com/huynhsamha/react-configure/blob/master/README.VN.md)
 
 
 
