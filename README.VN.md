@@ -98,6 +98,10 @@ moment,
 <!-- /TOC -->
 
 
+# Donate
+
+<a href="https://www.buymeacoffee.com/harisk" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+
 
 # Bắt đầu với `create-react-app`
 Nếu bạn mới bắt đầu sử dụng react hoặc chưa biết đến create-react-app thì mình nghĩ bạn nên sử dụng thằng này để làm quen với react, vì nó đã làm sẵn mọi thứ giúp ta, ta chỉ cần làm theo những gì ta muốn với công cụ này.
