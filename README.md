@@ -842,7 +842,3 @@ I think you also setting your VSCode by following steps:
     "vsicons.projectDetection.autoReload": true,
 }
 ```
-
-# Donate
-
-<a href="https://www.buymeacoffee.com/harisk" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
