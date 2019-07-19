@@ -173,7 +173,7 @@ Nếu bạn nào đã dùng qua SASS , LESS, SCSS thì cũng biết sự lợi h
 src/**/*.css
 ```
 
-Lúc này khi ta start de lên, khi có thay đổi gì ở file sass, thì nó sẽ tự build lại các file css cho ta và browser tự động được refresh. 
+Lúc này khi ta start lên, khi có thay đổi gì ở file sass, thì nó sẽ tự build lại các file css cho ta và browser tự động được refresh. 
 
 Còn trong file .gitignore, ta thêm các file tự động sinh ra do sass để tránh gây conflict không cần thiết khi nhiều người commit.
 
@@ -534,7 +534,7 @@ ReactDOM.render(
 );
 ```
 
-2. Trong tứng component, ta import component of `react-intl` để sử dụng. Bạn có thể xem demo sử dụng ở demo phần redux.
+2. Trong từng component, ta import component of `react-intl` để sử dụng. Bạn có thể xem demo sử dụng ở demo phần redux.
 
 
 
@@ -703,7 +703,7 @@ Tada
 
 ## Scroll animted to target - react-scrollchor
 
-Tạo animation khi người dùng click và chuyên tới 1 element nào đó.
+Tạo animation khi người dùng click và chuyển tới 1 element nào đó.
 
 ### Installation
 `yarn add react-scrollchor` 
