@@ -101,12 +101,6 @@ moment,
 
 
 
-## Donate
-
-<a href="https://www.paypal.me/harisk305/5" target="_blank"><img src="https://i.imgur.com/4bN8fdy.jpg" alt="Donate to my paypal" width=240></a>
-
-
-
 # Start with `create-react-app`
 In this step, you should have `create-react-app` is installed globally.
 
