@@ -98,10 +98,6 @@ moment,
 <!-- /TOC -->
 
 
-# Donate
-
-<a href="https://www.paypal.me/harisk305/5" target="_blank"><img src="https://i.imgur.com/4bN8fdy.jpg" alt="Donate to my paypal" width=240></a>
-
 
 # Bắt đầu với `create-react-app`
 Nếu bạn mới bắt đầu sử dụng react hoặc chưa biết đến create-react-app thì mình nghĩ bạn nên sử dụng thằng này để làm quen với react, vì nó đã làm sẵn mọi thứ giúp ta, ta chỉ cần làm theo những gì ta muốn với công cụ này.
